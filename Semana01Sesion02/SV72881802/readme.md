@@ -22,13 +22,91 @@ Proceso Ejercicio1
 		Escribir "Error de sistema, ingresar un numero menor a 1000"
 	FinSi
 FinProceso
-----------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 
 2. Hacer un algoritmo en Pseint que lea un número entero por el teclado y determinar si es negativo.
-
+    Proceso Ejercicio2 
+	definir n1 Como Entero
+	Escribir "Escribe el numero"
+	n1 = 0 
+	Leer n1
+	si n1 < 0 entonces 
+		Escribir "Este número es negativo"
+	sino 
+		si n1 > 0 entonces
+			Escribir "Este número es positivo"
+		FinSi
+	FinSi
+	
+FinProceso
+----------------------------------------------------------------------------------------------
 3. Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
+    Proceso Ejercicio3 
+	Definir n1 Como Entero
+	Escribir "Ingresa el número"
+	n1 = 0 
+	leer n1 
+	Si n1 mod 10 == 4 Entonces
+		Escribir "El número si termina en 4"
+	sino 
+		Escribir "El número no termina en 4"
+	FinSi
+FinProceso
+------------------------------------------------------------------------------------------------
 
 4. Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
+    Proceso Ejercicio4
+	Definir n1, n2, n3 Como Entero
+	Escribir "Escribe el primer número"
+	Leer n1
+	Escribir "Escribe el segundo número"
+	Leer n2
+	Escribir "Escribe el tercer número"
+	Leer n3
+	
+	si (n1 > n2) & (n1 > n3) Entonces
+		may<-a 
+		si n2>n3 Entonces
+			inter<-n2
+			men<-n3
+		SiNo
+			inter<-n3
+			men<-n2
+		FinSi
+	sino
+		men<-n1
+	FinSi
+	si (n2 > n1) & (n2 > n3) Entonces
+		may<-n2 
+		si n1>n3 Entonces
+			inter<-n1
+			men<-n3
+		SiNo
+			inter<-n3
+			men<-n1
+		FinSi
+	sino
+		men<-n2
+	FinSi
+	si (n3 > n1) & (n3 > n2) Entonces
+		may<-n3 
+		si n1>n2 Entonces
+			inter<-n1
+			men<-n2
+		SiNo
+			inter<-n2
+			men<-n1
+		FinSi
+	sino
+		men<-n3
+	FinSi
+	Escribir "mayor=",may
+	Escribir "intermedio=",inter
+	Escribir "menor=",men
+	
+	
+FinProceso
+-------------------------------------------------------------------------------------
 
 5. Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
 
