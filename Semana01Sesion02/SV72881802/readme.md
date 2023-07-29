@@ -110,19 +110,142 @@ FinProceso
 
 5. Hacer un algoritmo en Pseint para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. Si son más de diez, se les dará un 10% de descuento sobre el total de la compra; si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento; y si son más treinta zapatos se otorgará un 40% de descuento. El precio de cada zapato es de $80.
 
+	Proceso Ejercicio5
+	Escribir "Escribe la cantidad de pares de zapatos que deseas comprar"
+	Leer n1
+	si n1>30 
+		Escribir "Se le otorgo un descuento del 40% en su compra"
+		n2 = n1 * 80
+		np = (n2*40) / 100
+		nr = n2 - np
+		Escribir "El total a pagar con su descuento es ", nr
+	FinSi
+	si n1>20 & n1<=30 Entonces
+		Escribir "Se le otorgo un descuento del 20% en su compra"
+		n2 = n1 * 80
+		np = (n2*20) / 100
+		nr = n2 - np
+		Escribir "El total a pagar con su descuento es ", nr
+	FinSi
+	
+	si n1>10 & n1<=20 Entonces
+		Escribir "Se le otorgo un descuento del 10% en su compra"
+		n2 = n1 * 80
+		np = (n2*10) / 100
+		nr = n2 - np
+		Escribir "El total a pagar con su descuento es ", nr
+		sino 
+		si n1<=10 & n1 > 0 Entonces
+			n1 = n1 * 80
+			Escribir "El precio total de su compra es ", n1
+		FinSi
+	FinSi
+	si n1<0 Entonces
+		escribir "Error, por favor ingresar un número positivo"
+	FinSi
+FinProceso
+---------------------------------------------------------------------------------------------------------------------------
+
 6. Hacer un algoritmo en Pseint para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora.
+
+	Proceso Ejercicio6
+	Definir n1, ne , nr Como Real
+	Escribir"¿Cuántas horas a la semana piensa trabajar?"
+	Leer n1
+	Si n1>40 Entonces
+		ne = n1 - 40
+		nr = (40*20) + (ne*25)
+	SiNo
+		nr = n1*20
+	FinSi
+	Escribir "El pago semanal por las ", n1 " horas trabajadas es ", nr
+	si n1<0 Entonces
+		Escribir "Colocar un número de horas válido"
+	FinSi
+FinProceso
+-------------------------------------------------------------------------------------------------------------------------
 
 7. Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
 
-   Tipo A 10% de descuento
-   Tipo B 15% de descuento
-   Tipo C 20% de descuento
+ 	Tipo A 10% de descuento
+ 	Tipo B 15% de descuento
+ 	Tipo C 20% de descuento
+
+  		Proceso ejercicio7
+		definir precio,descuento Como Real;
+		definir tipo Como Caracter;
+		escribir "¿Cual es el precio del helado?";
+		leer precio;
+		escribir "¿Que tipo de membresia tiene usted"
+		Escribir "tipo a"
+		Escribir "tipo b"
+		Escribir "tipo c"
+		leer tipo;
+		Segun tipo Hacer
+		"a":
+			descuento = (precio * 10)/100;
+			precio = precio - descuento;
+		"b":
+			descuento = (precio * 15)/100;
+			precio = precio - descuento;
+		"c":
+			descuento = (precio * 20)/100;
+			precio = precio - descuento;
+		Fin Segun
+		escribir "el precio es ",precio," soles";
+		si precio < 0 Entonces
+			Escribir "Ingresa un digito valido sobre el precio del helado porfavor,de otra forma no podremos atenderlo."
+		FinSi
+		FinProceso
+----------------------------------------------------------------------------------------------------------------------------------------
 
 8. Hacer un algoritmo en Pseint para calcular el promedio de tres notas y determinar si el estudiante aprobó o no.
-
+Proceso Ejercicio8
+	Definir nota1, nota2, nota3, promedio Como Real
+	Escribir "Escribe tus tres notas"
+	leer nota1
+	Leer nota2
+	Leer nota3
+	promedio = (nota1+nota2+nota3)/3
+	Escribir "El promedio de tus notas es ", promedio
+	si promedio >= 14 Entonces
+		Escribir "Usted esta aprobado"
+	sino 
+		si promedio <= 13 Entonces
+			Escribir "Usted esta desaprobado"
+		FinSi
+	FinSi
+FinProceso
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 9. Hacer un algoritmo en Pseint para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
+Proceso Ejercicio9
+	definir aumento Como Real
+	definir pago Como Entero
+	Escribir "¿Cuánto ganas al mes?"
+	Leer pago
+	si pago <= 2000 Entonces
+		aumento = pago*10/100
+	sino 
+		si pago >= 2001 Entonces
+			aumento = pago*5/100
+		FinSi
+	FinSi
+	Escribir "Su aumento es ", aumento " dolares."
+FinProceso
+-------------------------------------------------------------------------------------------
 
 10. Hacer un algoritmo en Pseint que diga si un número es par o impar.
+Proceso Ejercicio10
+	definir n Como Entero
+	Escribir "Escribe un número"
+	Leer n
+	si n mod 2==0 Entonces
+		Escribir "El número ", n " es par."
+	SiNo
+		Escribir "El número ", n " es impar."
+	FinSi
+FinProceso
+------------------------------------------------------------------------------------
 
 11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
 
