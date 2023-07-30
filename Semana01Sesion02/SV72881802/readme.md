@@ -248,6 +248,24 @@ FinProceso
 ------------------------------------------------------------------------------------
 
 11. Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
+Proceso Ejercicio11
+	Escribir "Ingresa los números que deseas"
+	leer n1, n2, n3
+	si n1 > n2 & n1 > n3 Entonces
+			Escribir  "El número ", n1 " es el mayor de los tres"
+		SiNo
+			si n2 > n1 & n2 > n3 entonces
+				Escribir "El número ", n2 " es el mayor de los tres"
+			SiNo
+			FinSi
+			si n3 > n1 & n3 > n2 Entonces
+				Escribir "El número ", n3 " es el mayor de los tres"
+			FinSi
+	FinSi
+		
+FinProceso
+---------------------------------------------------------------------------------------
+
 
 12. Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
 
