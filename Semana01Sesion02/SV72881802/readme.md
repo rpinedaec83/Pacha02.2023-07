@@ -268,8 +268,37 @@ FinProceso
 
 
 12. Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
+	Proceso Ejercicio12
+	Escribir "Ingresa los números que deseas"
+	leer n1, n2
+	si n1 > n2  Entonces
+			Escribir  "El número ", n1 " es el mayor de los tres"
+		SiNo
+			si n2 > n1  entonces
+				Escribir "El número ", n2 " es el mayor de los tres"
+			SiNo
+			FinSi
+	FinSi
+	
+FinProceso
+--------------------------------------------------------------------------------------
 
 13. Hacer un algoritmo en Pseint que lea una letra y diga si es una vocal.
+Proceso Ejercicio13
+	definir letra Como Caracter
+	Escribir "Ingrese las letras usted desee."
+	leer letra 
+	si letra == "a" o letra == "e" o letra == "o" o letra == "i" o letra == "u" Entonces
+		Escribir "El caracter ", letra " es una vocal"
+	sino 
+		si letra == "A" o letra == "E" o letra == "I" o letra == "O" o letra == "U" Entonces
+			Escribir "El caracter " , letra " es una vocal"
+		sino 
+			Escribir "El caracter ", letras " es una consonante"
+		FinSi
+	FinSi
+FinProceso
+---------------------------------------------------------------------------------------------------
 
 14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
 
