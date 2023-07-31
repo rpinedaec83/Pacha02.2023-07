@@ -154,7 +154,7 @@ FinSubProceso
 SubProceso Ejercicio5
 	Definir cant, desc, total, ahorro Como Entero
 	Escribir "Ejercicio 5"
-	Escribir "Algoritmo calculo de descuento al por mayor"
+	Escribir "Algoritmo de calculo de descuento al por mayor"
 	Escribir ""; Escribir ""
 	Escribir "+++++Zapateria Total!+++++"; Escribir "Tabla de descuentos:"
 	Escribir "10 zapatos o mas ----- 10% de DESCUENTO"
@@ -296,9 +296,9 @@ SubProceso Ejercicio11
 		Escribir "El número mayor es: ",n1
 	SiNo
 		Si n2 > n3
-			Escribir "El número mayor es: ",n2
+			Escribir "El numero mayor es: ",n2
 		SiNo
-			Escribir "El número mayor es: ",n3
+			Escribir "El numero mayor es: ",n3
 		FinSi
 	FinSi
 FinSubProceso
@@ -310,9 +310,9 @@ SubProceso Ejercicio12
 	Escribir "Ingresar 1er numero"; Sin Saltar Leer n1
 	Escribir "Ingresar 2do numero"; Sin Saltar Leer n2
 	Si n1 > n2
-		Escribir "El número mayor es: ",n1
+		Escribir "El numero mayor es: ",n1
 	SiNo
-		Escribir "El número mayor es: ",n2
+		Escribir "El numero mayor es: ",n2
 	FinSi
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
@@ -333,7 +333,29 @@ SubProceso Ejercicio13
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio14
-	Escribir "AUN EN DESARROLLO"
+	Definir num,cont Como Entero
+	Escribir "Ejercicio 14"
+	Escribir "Determinar si un numero del 1 - 10 es primo"
+	Escribir "Ingresar numero"
+	cont <- 0; rep <- Verdadero
+	Mientras rep = Verdadero Hacer
+		Leer num
+		Si num <= 10 y num >= 1
+			Para i <- 1 Hasta num Hacer
+				Si num % i == 0
+					cont <- cont + 1
+				FinSi
+			FinPara
+			Si cont = 2 Entonces
+				Escribir num," ES primo"
+			SiNo
+				Escribir num," NO es primo"
+			FinSi
+			rep <- Falso
+		SiNo
+			Escribir "Solo numeros entre el 1 y el 10"
+		FinSi
+	FinMientras
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio15
@@ -349,7 +371,7 @@ SubProceso Ejercicio15
 	Segun opc Hacer
 		1:	Escribir "centimetros" Sin Saltar; Leer cent
 			pulg <- cent/2.54
-			Escribir cent," centímetros son: ",pulg," pulgadas"
+			Escribir cent," centimetros son: ",pulg," pulgadas"
 		2:	Escribir "pulgadas" Sin Saltar; Leer pulg
 			cent <- pulg*2.54
 			Escribir lib,"libras son: ",cent," centimetros"
@@ -359,24 +381,134 @@ SubProceso Ejercicio15
 		4:  Escribir "kilogramos" Sin Saltar; Leer kil
 			lib <- kil*2.205
 			Escribir kil," kilogramos son: ",lib," libras"
-			
+		De Otro Modo:
+			Escribir "ERROR: Opcion no valida."
 	FinSegun
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio16
-	Escribir "AUN EN DESARROLLO"
+	Definir diaAño Como Entero
+    Escribir "Ingrese un número del 1 al 365:" Sin Saltar; Leer diaAño
+    Si diaAño >= 1 y diaAño <= 365 Entonces
+        Definir diaMes Como Entero; Definir mes Como Caracter
+        limiteEne = 31;limiteFeb = 28;limiteMar = 31;limiteAbr = 30
+        limiteMay = 31;limiteJun = 30;limiteJul = 31;limiteAgo = 31
+        limiteSep = 30;limiteOct = 31;limiteNov = 30;limiteDic = 31
+        Si diaAño <= limiteEne Entonces
+            mes <- "Enero"
+            diaMes <- diaAño
+        Sino
+            Si diaAño <= limiteEne + limiteFeb Entonces
+                mes <- "Febrero"
+                diaMes <- diaAño - limiteEne
+            Sino
+                Si diaAño <= limiteEne + limiteFeb + limiteMar Entonces
+                    mes <- "Marzo"
+                    diaMes <- diaAño - (limiteEne + limiteFeb)
+                Sino
+                    Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr Entonces
+                        mes <- "Abril"
+                        diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar)
+                    Sino
+                        Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay Entonces
+                            mes <- "Mayo"
+                            diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr)
+                        Sino
+                            Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun Entonces
+                                mes <- "Junio"
+                                diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay)
+                            Sino
+                                Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul Entonces
+                                    mes <- "Julio"
+                                    diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun)
+                                Sino
+                                    Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo Entonces
+                                        mes <- "Agosto"
+                                        diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul)
+                                    Sino
+                                        Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep Entonces
+                                            mes <- "Septiembre"
+                                            diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo)
+                                        Sino
+                                            Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep + limiteOct Entonces
+                                                mes <- "Octubre"
+                                                diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep)
+                                            Sino
+                                                Si diaAño <= limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep + limiteOct + limiteNov Entonces
+                                                    mes <- "Noviembre"
+                                                    diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep + limiteOct)
+                                                Sino
+                                                    mes <- "Diciembre"
+                                                    diaMes <- diaAño - (limiteEne + limiteFeb + limiteMar + limiteAbr + limiteMay + limiteJun + limiteJul + limiteAgo + limiteSep + limiteOct + limiteNov)
+                                                FinSi
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+        Escribir "El dia ", diaAño, " corresponde al ", diaMes, " de ", mes
+    Sino
+        Escribir "El numero ingresado no corresponde a un dia del año valido."
+    FinSi
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio17
-	Escribir "AUN EN DESARROLLO"
+	Definir horas,seg Como Entero
+	Escribir "Ejercicio 17"
+	Escribir "Convertir horas a segundos"
+	Escribir "Horas" Sin Saltar; Leer horas
+	seg <- (horas*60) * 60
+	Escribir horas," horas son ",seg," segundos"
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio18
-	Escribir "AUN EN DESARROLLO"
+	Definir cant, prec, total Como Entero; Definir gan Como Real
+	Escribir "Ejercicio 18"
+	Escribir "Algoritmo"
+	Escribir "";Escribir ""
+	Escribir "+++++Tienda de CDs!+++++"; Escribir "Tabla de precios:"
+	Escribir "Menos de 10 ------- $10/u"
+	Escribir "10 o mas ---------- $8/u"
+	Escribir "100 o mas --------- $7/u"
+	Escribir "500 o mas --------- $6/u"
+	Escribir ""
+	Escribir "Cuantos CDs va a adquirir?"
+	Leer cant
+	Si cant>0 y cant<10 Entonces
+		prec <- 10
+	Sino
+		Si cant>=10 y cant<100
+			prec <- 8
+		SiNo
+			Si cant>=100 y cant<500
+				prec <- 7
+			SiNo
+				Si cant>=500
+					prec <- 6
+				SiNo
+					Escribir "ERROR: Cantidad inválida"
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	total <- cant*prec; gan <- 8.25/100 * total
+	Escribir "Precio total:        $",total
+	Escribir "Precio x unidad:     $",prec
+	Escribir "Ganancia:           +$",gan
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio19
-	Escribir "AUN EN DESARROLLO"
+	Escribir "+++++Zapateria Total!+++++"; Escribir "Tabla de descuentos:"
+	Escribir "10 zapatos o mas ----- 10% de DESCUENTO"
+	Escribir "20 zapatos o mas ------- 20% de DESCUENTO"
+	Escribir "30 zapatos o mas --------- 40% de DESCUENTO"
+	Escribir "Cuantos zapatos piensa comprar?"
+	Leer cant
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio20

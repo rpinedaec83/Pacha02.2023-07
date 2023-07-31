@@ -1,6 +1,6 @@
 //Hacer un algoritmo en Pseint que lea un número y según ese número, indique el día que corresponde.
 
-Algoritmo DiaDelAnio
+Proceso DiaDelAnio
     Definir DiaAno Como Entero
 	
     Escribir "Ingrese un número del 1 al 365:"
@@ -10,7 +10,6 @@ Algoritmo DiaDelAnio
         Definir diaComoMes Como Entero
 		Definir mes Como Caracter
 		
-        // Definir los límites de días por mes (no se consideran años bisiestos)
         limiteEne = 31
         limiteFeb = 28
         limiteMar = 31
@@ -24,7 +23,6 @@ Algoritmo DiaDelAnio
         limiteNov = 30
         limiteDic = 31
 		
-        // Calcular el mes y el día correspondiente al día del año
         Si DiaAno <= limiteEne Entonces
             mes <- "Enero"
             diaComoMes <- DiaAno
@@ -82,10 +80,8 @@ Algoritmo DiaDelAnio
                 FinSi
             FinSi
         FinSi
-		
-        // Mostrar el resultado
         Escribir "El día ", DiaAno, " corresponde al ", diaComoMes, " de ", mes
     Sino
         Escribir "El número ingresado no corresponde a un día del año válido."
     FinSi
-FinAlgoritmo
+FinProceso
