@@ -11,6 +11,28 @@
 
 Proceso Ejercicio_19
 	
+	Definir tipo,dias,sueldo Como Entero
+	Definir rep Como Logico
 	
+	Leer tipo
+	
+	Segun tipo
+		1: sueldo <- 56
+		2: sueldo <- 64
+		3: sueldo <- 80
+		4: sueldo <- 48
+	FinSegun
+	
+	rep <- Verdadero
+	Mientras rep = Verdadero
+		Leer dias
+		Si dias <= 6 y dias >= 1
+			rep <- Falso
+		SiNo
+			rep <- Verdadero
+		FinSi
+	FinMientras
+	
+	Escribir "Sueldo: ",dias * sueldo
 	
 FinProceso

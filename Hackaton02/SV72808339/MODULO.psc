@@ -156,7 +156,7 @@ SubProceso Ejercicio5
 	Escribir "Ejercicio 5"
 	Escribir "Algoritmo de calculo de descuento al por mayor"
 	Escribir ""; Escribir ""
-	Escribir "+++++Zapateria Total!+++++"; Escribir "Tabla de descuentos:"
+	Escribir "+++++ Zapateria Total! +++++"; Escribir "Tabla de descuentos:"
 	Escribir "10 zapatos o mas ----- 10% de DESCUENTO"
 	Escribir "20 zapatos o mas ------- 20% de DESCUENTO"
 	Escribir "30 zapatos o mas --------- 40% de DESCUENTO"
@@ -471,7 +471,7 @@ SubProceso Ejercicio18
 	Escribir "Ejercicio 18"
 	Escribir "Algoritmo"
 	Escribir "";Escribir ""
-	Escribir "+++++Tienda de CDs!+++++"; Escribir "Tabla de precios:"
+	Escribir "+++++ Tienda de CDs! +++++"; Escribir "Tabla de precios:"
 	Escribir "Menos de 10 ------- $10/u"
 	Escribir "10 o mas ---------- $8/u"
 	Escribir "100 o mas --------- $7/u"
@@ -503,46 +503,185 @@ SubProceso Ejercicio18
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio19
-	Escribir "+++++Zapateria Total!+++++"; Escribir "Tabla de descuentos:"
-	Escribir "10 zapatos o mas ----- 10% de DESCUENTO"
-	Escribir "20 zapatos o mas ------- 20% de DESCUENTO"
-	Escribir "30 zapatos o mas --------- 40% de DESCUENTO"
-	Escribir "Cuantos zapatos piensa comprar?"
-	Leer cant
+	Definir tipo,dias,sueldo Como Entero
+	Definir rep Como Logico
+	Escribir "Ejericcio 19"
+	Escribir "Algoritmo para calcular sueldo semanal de trabajador"
+	Escribir "+++++ Heladeria Grido +++++"; Escribir "Programa de administración de sueldos"
+	Escribir "Tabla de trabajadores:"
+	Escribir "1. Cajero ---------------------- $56/dia"
+	Escribir "2. Servidor -------------------- $64/dia"
+	Escribir "3. Preparador de mezclas ------- $80/dia"
+	Escribir "4. Mantenimiento --------------- $48/dia"
+	Escribir "Trabador" Sin Saltar; Leer tipo
+	Segun tipo
+		1: sueldo <- 56
+		2: sueldo <- 64
+		3: sueldo <- 80
+		4: sueldo <- 48
+	FinSegun
+	rep <- Verdadero
+	Mientras rep = Verdadero
+		Escribir "Dias" Sin Saltar; Leer dias
+		Si dias <= 6 y dias >= 1
+			rep <- Falso
+		SiNo
+			Escribir "Máximo 6 días"
+			rep <- Verdadero
+		FinSi
+	FinMientras
+	Escribir ""
+	Escribir "Pago por dia:      $", sueldo
+	Escribir "Trabaja ",dias," dias a la semana"
+	Escribir "Sueldo:            $",dias * sueldo
+	Escribir ""
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio20
-	Escribir "AUN EN DESARROLLO"
+	Dimension numbers[4]
+	Escribir "Ejercicio 20"
+	Escribir "Algoritmo de condiciones"
+	Escribir "Ingrese 4 numeros"
+	Para i<-1 Hasta 4
+		Escribir "N",i Sin Saltar; Leer numbers[i]
+		Si numbers[i] < 0
+			Repetir
+				Escribir "Solo numeros entero positivo"
+				Escribir "N",i Sin Saltar; Leer numbers[i]
+			Hasta Que numbers[i] > 0
+		FinSi
+	FinPara
+	Para i<-1 Hasta 4
+		Si numbers[i] % 2 == 0
+			pares = pares + 1
+		FinSi
+	FinPara
+	Escribir pares," numeros son pares"
+	may <- 0
+	Para i<-1 Hasta 4
+		Si numbers[i] > may Entonces
+			may <- numbers[i]
+		FinSi
+	FinPara
+	Escribir may," es el mayor de todos"
+	Si numbers[3] % 2 == 0
+		Escribir "Cuadrado del N2: ", numbers[2]*numbers[2]
+	FinSi
+	Si numbers[1] < numbers[4]
+		sum <- 0
+		Para i<-1 hasta 4	
+			sum <- sum + numbers[i]
+		FinPara
+		Escribir "Media de los 4 numeros: ",sum/4
+		Escribir "Suma de todos: ",sum
+	FinSi
+	Si numbers[2] > numbers[3]
+		Si numbers[3] >= 50 y numbers[3] <= 700
+			Escribir "El N3 está entre 50-700"
+		SiNo
+			Escribir "El N3 NO está entre 50-700"
+		FinSi
+	FinSi
 FinSubProceso
 //11-20----------11-20----------11-20----------11-20----------11-20----------11-20----------11-20----------11-20----------11-20----------11-20//
 //============================================================================================================================================//
 //21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30//
 SubProceso Ejercicio21
-	Escribir "AUN EN DESARROLLO"
+	Definir num,fact Como Entero
+	Escribir "Ejercicio 21"
+	Escribir "Calcular el factorial de un numero"
+	Escribir "Ingrese el numero" Sin Saltar; Leer num
+	fact <- 1
+	Para i<-num Hasta 1 Con Paso -1
+		fact <- fact * i
+	FinPara
+	Escribir "El factorial de ",num," es ",fact
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio22
-	Escribir "AUN EN DESARROLLO"
+	Definir num, suma Como Entero
+	Escribir "Ejercicio 22"
+	Escribir "Calcular la suma de los primeros n numeros"
+	Escribir "Ingrese el numero" Sin Saltar; Leer num
+	Para i<-0 Hasta num
+		suma <- suma + i
+	FinPara
+	Escribir "La suma de todos",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio23
-	Escribir "AUN EN DESARROLLO"
+	Definir num, suma Como Entero
+	Escribir "Ejercicio 23"
+	Escribir "Sumar todos los impares menores o iguales a n"
+	Escribir "Ingresa el valor de n"
+	Leer num
+	suma <- 0
+	Para i<-0 Hasta num
+		Si i % 2 <> 0
+			suma <- suma + i
+		FinSi
+	FinPara
+	Escribir "El resultado de la suma es ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio24
-	Escribir "AUN EN DESARROLLO"
+	Definir suma Como Entero
+	Escribir "Ejercicio 24"
+	Escribir "Determinar la suma de todos los pares hasta el 1000"
+	suma <- 0
+	Para i<-0 Hasta 1000
+		Si i % 2 == 0
+			suma <- suma + i
+		FinSi
+	FinPara
+	Escribir ""
+	Escribir "Todos los numeros pares hasta el 1000 suman: ",suma
+	Escribir ""
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio25
-	Escribir "AUN EN DESARROLLO"
+	Definir num,fact Como Entero
+	Escribir "Ejercicio 25"
+	Escribir "Calcular el factorial de un numero de forma distinta"
+	Escribir "Ingrese el numero" Sin Saltar; Leer num
+	fact <- 1
+	Para i<-1 Hasta num
+		fact <- fact * i
+	FinPara
+	Escribir fact, " es el factorial de ",num
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio26
-	Escribir "AUN EN DESARROLLO"
+	Definir div, dis,free, coci, res Como Entero
+	Escribir "Ejercicio 26"
+	Escribir "Calcular resto y cociente mediante restas sucesivas"
+	Escribir "Indique los numeros que quiere dividir"
+	Escribir "Dividendo" Sin Saltar; Leer div
+	Escribir "Divisor  " Sin Saltar; Leer dis
+	free <- div
+	Repetir
+		
+		free <- free - dis
+		coci <- coci + 1
+		
+	Hasta Que free - dis < 0
+	Escribir "Resto:        ", free
+	Escribir "Cociente:     ", coci
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio27
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 27"
+	Escribir "Calcular la media de una cantidad indefinida de numeros"
+	Escribir "Ingresar un negativo para parar y obtener el resultado"
+	cont <- 0
+	Repetir
+		Escribir "N",cont+1 Sin Saltar ; Leer num
+		Si num > 0
+			sum <- sum + num
+			cont <- cont + 1
+		FinSi
+	Hasta Que num < 0 
+	Escribir "La media de los ",cont," numeros es: ",redon(sum/cont)
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio28
