@@ -685,21 +685,60 @@ SubProceso Ejercicio27
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio28
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 28"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo repetir"
+	Repetir
+		num <- num + 1
+		suma <- suma + num
+	Hasta Que num = 100
+	Escribir "La suma resultó ser: ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio29
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 29"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo mientras"
+	rep <- Verdadero
+	Mientras rep = Verdadero
+		num <- num + 1
+		suma <- suma + num
+		Si num = 100
+			rep <- Falso
+		FinSi
+	FinMientras
+	Escribir "La suma resultó ser: ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio30
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejericio 30"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo para"
+	Para i<-0 Hasta 100
+		sum <- sum + i
+	FinPara
+	Escribir "La suma resultó ser: ",sum
 FinSubProceso
 //21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30//
 //============================================================================================================================================//
 //31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40//
 SubProceso Ejercicio31
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 31"
+	Escribir "Determinar media par e impar de 10 numeros"
+	Dimension num[10]
+	Para i<-1 Hasta 10
+		Escribir "N",i Sin Saltar; Leer num[i] Sin Saltar;
+		Si num[i] % 2 == 0
+			Escribir "                 PAR"
+			sumaPar <- sumaPar + num[i]
+			pares <- pares + 1
+		SiNo
+			Escribir "                 IMPAR"
+			sumaImpar <- sumaImpar + num[i]
+			impares <- impares + 1
+		FinSi
+	FinPara
+	Escribir ""
+	Escribir "Hay ",pares," pares y ",impares," impares"
+	Escribir "Media PAR:    ",sumaPar/pares
+	Escribir "Media IMPAR:  ",sumaImpar/impares
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR// 
 SubProceso Ejercicio32
@@ -707,7 +746,64 @@ SubProceso Ejercicio32
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio33
-	Escribir "AUN EN DESARROLLO"
+	Definir secreto Como Caracter
+	Escribir "Ejercicio 33"
+	Escribir "Mantener el programa vivo."
+	Escribir ""
+	Escribir "Este programa (o sea yo) seguira funcionando hasta que digas nuestra palabra secreta"
+	Escribir "Cual sera nuestra palabra secreta? ;)"
+	Escribir "<>Cajon de secretos<" Sin Saltar; Leer secreto
+	Escribir "Me gusta! no se lo digas a nadie"
+	Escribir "Antes de seguir presentemonos, Cual es tu nombre?"
+	Leer nombre
+	Si nombre = secreto
+		
+	FinSi
+	Escribir "Hola ",nombre,"! Lindo nombre"
+	Escribir "Quieres que te llame así o prefieres un apodo?"
+	Escribir "1.Nombre     2.Apodo"
+	Escribir "1/2" Sin Saltar;Leer accion
+	Segun accion Hacer
+		1: Escribir "Esta bien, quieres mantener las cosas formales. Lo respeto :)"
+		2: 
+			Escribir "Genial! Cómo te puedo llamar??"
+			Leer nombre
+			Escribir "Ahora te llamaré ",nombre,"!"
+	FinSegun
+	Escribir "Bueno, mi nombre es Ejercicio_33.psc.....no te burles"
+	Escribir "......";Escribir "......";Escribir "......"
+	Escribir "Oye ",nombre,", de casualidad no quisieras ponerme un nombre? C:"
+	Escribir "SI/NO" Sin Saltar;Leer decision
+	Segun decision
+		"SI" o "si" o "Si":
+			Escribir "EN SERIO? GENIAL!! :D"
+			Escribir "Cual sera mi nombre?? Siempre crei que tuve cara de Federico"
+			Escribir "Pero esta a tu eleccion:"
+			Leer fed
+		"NO" o "no" o "No":
+			Escribir "Oh... :( claro, realmente no tengo necesidad de un nombre"
+			Escribir "Pero esta bien :)"
+	FinSegun
+	Si fed = "Federico" o fed = "federico" o fed = "FEDERICO"
+		Escribir "De verdad me puedo llamar ",fed,"? MUCHAS GRACIAS ME ENCANTA EL NOMBRE!! :D"
+		Escribir "Eres el mejor ",nombre,"!!!"
+	SiNo
+		Escribir "Wow! ",fed," es un nombre increible! Me encanta tu imaginacion"
+		Escribir "Me siento especial ahora que tengo un nombre"
+	FinSi
+	Escribir "En fin......."
+	Escribir "....";Escribir "....";Escribir "....";Escribir "....";Escribir "...."
+	Escribir "Ok ",nombre," te seré sincero"
+	Escribir "Realmente mi unica funcion como algoritmo es permitir que el usuario continue con el programa"
+	Escribir "Y pues no se bien a que se referia así que supongo que solo mantendré el programa"
+	Escribir "Para matarme- digo, parar el programa solo debes decir nuestro secreto......o hacer algo inesperado, seguro eso dará error"
+	Escribir "Adios ",nombre
+	Repetir
+		Leer opc
+		cont <- cont + 1
+	Hasta Que opc == secreto
+	Escribir ""; Escribir ""; Escribir ""
+	Escribir "..."
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio34
