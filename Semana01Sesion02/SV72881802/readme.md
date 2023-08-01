@@ -320,13 +320,103 @@ SiNo
 	Escribir " El número ", n2 " no es primo"
 FinSi
 FinProceso
+----------------------------------------------------------------------------
 
 
 15. Hacer un algoritmo en Pseint que convierta centímetros a pulgadas y libras a kilogramos.
+Proceso Ejercicio15
+	Escribir "1: Convertir centimetros a pulgadas."
+	Escribir "2: Convertir libras a kilogramos."
+	Leer op
+	si op = 1 Entonces
+		Escribir "Ingrese la unidad en centimetros para convertir a pulgadas"
+		leer n1 
+		Pulgadas = n1 * 0.39
+		Escribir  n1, " centimetros esquivale a ", pulgadas " pulgadas"
+	SiNo
+		si op = 2 Entonces
+			Escribir "Ingrese la unidad en libras para convertir a kilogramos."
+			leer n2
+			kilogramos = n2 * 0.45
+			Escribir n2 " libras equivale a ", kilogramos "kilogramos."
+		FinSi
+	FinSi
+	FinProceso
+--------------------------------------------------------------------------
 
 16. Hacer un algoritmo en Pseint que lea un número y según ese número, indique el día que corresponde.
+Proceso Ejercicio16
+	Definir op Como Entero
+	Escribir "Elije la opcion que tu desees"
+	Escribir "Opcion 1"
+	Escribir "Opcion 2"
+	Escribir "Opcion 3"
+	Escribir "Opcion 4"
+	Escribir "Opcion 5"
+	Escribir "Opcion 6"
+	Escribir "Opcion 7"
+	Leer op
+	
+	Si op = 1 Entonces
+		Escribir "Lunes"
+	sino 
+		si op = 2 Entonces
+			Escribir "Martes"
+		sino
+			si op = 3 Entonces
+				Escribir "Miercoles"
+			SiNo
+				si op = 4 Entonces
+					Escribir "Jueves"
+				SiNo
+					si op = 5 Entonces
+						Escribir "Viernes"
+					SiNo
+						si op = 6 Entonces
+							Escribir "Sabado"
+						SiNo
+							si op = 7 Entonces
+								Escribir "Domingo"
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	Si op < 1 Entonces
+		Escribir "ERROR, INGRESE UN NÚMERO VALIDO."
+	sino 
+		si op > 7 entonces
+			Escribir "ERROR, INGRESE UN NÚMERO VALIDO."
+		FinSi
+		
+	FinSi
+	
+FinProceso
+----------------------------------------------------------------------------
 
 17. Hacer un algoritmo en Pseint donde se ingrese una hora y nos calcule la hora dentro de un segundo.
+Proceso Ejercicio17
+	Definir hora1, minutos1, segundos1 Como Entero;
+	DEFINIR formato1, formato2 Como Caracter
+	Escribir "Escriba hora";
+	Escribir "Hora"; Leer hora1; Escribir "Minutos"; leer minutos1; Escribir "Segundos"; leer segundos1;
+	Escribir "Escoja la opcion 1.Am , 2.Pm";
+	Leer OP 
+	segundos2 = segundos1 + 1
+	SI OP = 1 Entonces
+		Escribir hora1,":", minutos1 ":" segundos2, "AM"
+	SINO 
+		SI OP = 2 Entonces
+			Escribir hora1,":", minutos1 ":" segundos2, "PM"
+			FinSi
+	FinSi
+	
+	
+
+FinProceso
+--------------------------------------------------
 
 18. Hacer un algoritmo en Pseint para una empresa se encarga de la venta y distribución de CD vírgenes. Los clientes pueden adquirir los artículos (supongamos un único producto de una única marca) por cantidad. Los precios son:
 
