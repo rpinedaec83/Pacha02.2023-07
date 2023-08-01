@@ -301,6 +301,26 @@ FinProceso
 ---------------------------------------------------------------------------------------------------
 
 14. Hacer un algoritmo en Pseint que lea un entero positivo del 1 al diez y al 9 y determine si es un número primo.
+Proceso Ejercicio14
+	Definir n1, n2, contador Como Entero
+	Escribir "Escribe un número"
+	Leer n2
+	n1 = 1
+	contador = 0
+	Mientras n1 <= n2 Hacer
+		si n2 mod n1 == 0 Entonces
+			contador = contador + 1
+		FinSi
+	n1 = n1+1
+
+FinMientras
+si contador == 2 Entonces
+	Escribir " El número ",n2 "  es primo"
+SiNo
+	Escribir " El número ", n2 " no es primo"
+FinSi
+FinProceso
+
 
 15. Hacer un algoritmo en Pseint que convierta centímetros a pulgadas y libras a kilogramos.
 
