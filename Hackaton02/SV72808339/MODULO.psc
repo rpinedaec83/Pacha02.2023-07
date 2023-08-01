@@ -1,6 +1,5 @@
 Proceso Modulo
 	
-    Definir resultado Como Cadena
 	Definir opc Como Entero
 	Definir ciclo Como Logico; ciclo <- Verdadero
 	
@@ -8,12 +7,11 @@ Proceso Modulo
 	Escribir "----------------------------------------------"
 	Escribir "0 para SALIR!!"
 	
-	Mientras ciclo = Verdadero
+	Repetir
 		Escribir "Elija uno de los 40 ejercicios resueltos"
 		Escribir "1-40" Sin Saltar; Leer opc
 		Escribir ""
 		Segun opc Hacer
-			0: ciclo <- Falso
 			1: Ejercicio1
 			2: Ejercicio2
 			3: Ejercicio3
@@ -58,7 +56,7 @@ Proceso Modulo
 				Escribir "ERROR: Por favor solo escriba un numero entre el 1-40"
 		FinSegun
 		Escribir ""
-	FinMientras
+	Hasta Que opc = 0
 	Escribir "MUCHAS GRACIAS"
 	Escribir "                        por Fabricio Oliva"
 	
@@ -458,12 +456,64 @@ SubProceso Ejercicio16
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio17
-	Definir horas,seg Como Entero
+	
 	Escribir "Ejercicio 17"
-	Escribir "Convertir horas a segundos"
-	Escribir "Horas" Sin Saltar; Leer horas
-	seg <- (horas*60) * 60
-	Escribir horas," horas son ",seg," segundos"
+	Escribir "Mostrar hora despues de un segundo"
+	Definir hora, min, seg Como Entero
+	Definir H, M, S Como Caracter
+	Repetir
+		Escribir "Hora" Sin Saltar; Leer hora
+		H <- ConvertirATexto(hora)
+		Si hora < 0 o hora > 23
+			Escribir "Formato de hora aceptado de 00 a 23"
+		FinSi
+	Hasta Que hora <= 23 y hora >= 0
+	Repetir
+		Escribir "Minuto" Sin Saltar; Leer min
+		Si min < 0 o min > 59
+			Escribir "Minuto entre 0 y 59"
+		FinSi
+	Hasta Que min <= 59 y min >= 0
+	Repetir
+		Escribir "Segundo" Sin Saltar; Leer seg
+		Si seg < 0 o seg > 59
+			Escribir "Segundo entre 0 y 59"
+		FinSi
+	Hasta Que seg <= 59 y seg >= 0
+	Si seg = 0
+		S <- ConvertirATexto(seg)
+		S <- "00"
+	SiNo
+		S <- ConvertirATexto(seg)
+	FinSi
+	Si min = 0
+		M <- ConvertirATexto(min)
+		M <- "00"
+	SiNo
+		M <- ConvertirATexto(min)
+	FinSi
+	Si hora = 0
+		H <- ConvertirATexto(hora)
+		H <- "00"
+	SiNo
+		H <- ConvertirATexto(hora)
+	FinSi
+	Escribir "Hora ingresada:"
+	Escribir H,":",M,":",S
+	seg <- seg + 1
+	Si seg = 60
+		S <- "00"
+		min <- min + 1
+		Si min = 60
+			M <- "00"
+			hora <- hora + 1
+			Si hora = 24
+				H <- "00"
+			FinSi
+		FinSi
+	FinSi
+	Escribir "La hora después de un segundo: "
+	Escribir H,":",M,":",S
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio18
@@ -685,21 +735,60 @@ SubProceso Ejercicio27
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio28
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 28"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo repetir"
+	Repetir
+		num <- num + 1
+		suma <- suma + num
+	Hasta Que num = 100
+	Escribir "La suma resultó ser: ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio29
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 29"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo mientras"
+	rep <- Verdadero
+	Mientras rep = Verdadero
+		num <- num + 1
+		suma <- suma + num
+		Si num = 100
+			rep <- Falso
+		FinSi
+	FinMientras
+	Escribir "La suma resultó ser: ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio30
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejericio 30"
+	Escribir "Algoritmo para sumar los primeros 100 numeros con un ciclo para"
+	Para i<-0 Hasta 100
+		sum <- sum + i
+	FinPara
+	Escribir "La suma resultó ser: ",sum
 FinSubProceso
 //21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30----------21-30//
 //============================================================================================================================================//
 //31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40//
 SubProceso Ejercicio31
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 31"
+	Escribir "Determinar media par e impar de 10 numeros"
+	Dimension num[10]
+	Para i<-1 Hasta 10
+		Escribir "N",i Sin Saltar; Leer num[i] Sin Saltar;
+		Si num[i] % 2 == 0
+			Escribir "                 PAR"
+			sumaPar <- sumaPar + num[i]
+			pares <- pares + 1
+		SiNo
+			Escribir "                 IMPAR"
+			sumaImpar <- sumaImpar + num[i]
+			impares <- impares + 1
+		FinSi
+	FinPara
+	Escribir ""
+	Escribir "Hay ",pares," pares y ",impares," impares"
+	Escribir "Media PAR:    ",sumaPar/pares
+	Escribir "Media IMPAR:  ",sumaImpar/impares
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR// 
 SubProceso Ejercicio32
@@ -707,35 +796,195 @@ SubProceso Ejercicio32
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio33
-	Escribir "AUN EN DESARROLLO"
+	Definir secreto Como Caracter
+	Escribir "Ejercicio 33"
+	Escribir "Mantener el programa vivo."
+	Escribir ""
+	Escribir "Este programa seguira funcionando hasta que digas nuestra palabra secreta"
+	Escribir "Cual sera nuestra palabra secreta? ;)"
+	Escribir "<>Cajon de secretos<" Sin Saltar; Leer secreto
+	Escribir "Me gusta! no se lo digas a nadie"
+	Escribir "Antes de seguir presentemonos, Cual es tu nombre?"
+	Leer nombre
+	Si nombre = secreto
+		
+	FinSi
+	Escribir "Hola ",nombre,"! Lindo nombre"
+	Escribir "Quieres que te llame así o prefieres un apodo?"
+	Escribir "1.Nombre     2.Apodo"
+	Escribir "1/2" Sin Saltar;Leer accion
+	Segun accion Hacer
+		1: Escribir "Esta bien, quieres mantener las cosas formales. Lo respeto :)"
+		2: 
+			Escribir "Genial! Cómo te puedo llamar??"
+			Leer nombre
+			Escribir "Ahora te llamaré ",nombre,"!"
+	FinSegun
+	Escribir "Bueno, mi nombre es Ejercicio_33.psc.....no te burles"
+	Escribir "......";Escribir "......";Escribir "......"
+	Escribir "Oye ",nombre,", de casualidad no quisieras ponerme un nombre? C:"
+	Escribir "SI/NO" Sin Saltar;Leer decision
+	Segun decision
+		"SI" o "si" o "Si":
+			Escribir "EN SERIO? GENIAL!! :D"
+			Escribir "Cual sera mi nombre?? Siempre crei que tuve cara de Federico"
+			Escribir "Pero esta a tu eleccion:"
+			Leer fed
+			Si fed = "Federico" o fed = "federico" o fed = "FEDERICO"
+				Escribir "De verdad me puedo llamar ",fed,"? MUCHAS GRACIAS ME ENCANTA EL NOMBRE!! :D"
+				Escribir "Eres el mejor ",nombre,"!!!"
+			SiNo
+				Escribir "Wow! ",fed," es un nombre increible! Me encanta tu imaginacion"
+				Escribir "Me siento especial ahora que tengo un nombre"
+			FinSi
+		"NO" o "no" o "No":
+			Escribir "Oh... :( claro, realmente no tengo necesidad de un nombre"
+			Escribir "Pero esta bien :)"
+	FinSegun
+	Escribir "En fin......."
+	Escribir "....";Escribir "....";Escribir "....";Escribir "....";Escribir "...."
+	Escribir "Ok ",nombre," te seré sincero"
+	Escribir "Realmente mi unica funcion como algoritmo es permitir que el usuario continue con el programa"
+	Escribir "Y pues no se bien a que se referia así que supongo que solo mantendré el programa"
+	Escribir "Para matarme- digo, parar el programa solo debes decir nuestro secreto......o hacer algo inesperado, seguro eso dará error"
+	Escribir "Adios ",nombre
+	Repetir
+		Leer opc
+		cont <- cont + 1
+	Hasta Que opc == secreto
+	Escribir ""; Escribir ""; Escribir ""
+	Escribir "..."
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio34
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 34"
+	Escribir "Mostrar la tabla de multiplicar del 1 al 9"
+	Escribir ""
+	Para i <- 1 Hasta 9
+		Escribir "1 x ",i," = ",i * 1,"     " Sin Saltar; 
+		Escribir "2 x ",i," = ",i * 2,"     " Sin Saltar;
+		Escribir "3 x ",i," = ",i * 3," "
+	FinPara; Escribir ""
+	Para i <- 1 Hasta 9
+		Escribir "4 x ",i," = ",i * 4,"     " Sin Saltar; 
+		Escribir "5 x ",i," = ",i * 5,"     " Sin Saltar;
+		Escribir "6 x ",i," = ",i * 6," "
+	FinPara; Escribir ""
+	Para i <- 1 Hasta 9
+		Escribir "7 x ",i," = ",i * 7,"     " Sin Saltar;
+		Escribir "8 x ",i," = ",i * 8,"     " Sin Saltar;
+		Escribir "9 x ",i," = ",i * 9," "
+	FinPara
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio35
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 35"
+	Escribir "De 20 numeros determinar el mayor y el menor"
+	Definir may,men Como Real
+	Dimension num[20]
+	Escribir "Ingrese los 20 numeros:"
+	Para i<-1 Hasta 20
+		Escribir "N",i Sin Saltar; Leer num[i]
+	FinPara
+	may <- 0
+	Para i<-1 Hasta 20
+		Si num[i] > may Entonces
+			may <- num[i]
+		FinSi
+	FinPara
+	men <- num[1]
+	Para i<-2 Hasta 20
+		Si num[i] < men Entonces
+			men <- num[i]
+		FinSi
+	FinPara
+	Escribir "El numero mayor es: ",may
+	Escribir "El numero menor es: ",men
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio36
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 36"
+	Escribir "Calcular serie de Fibonacci"
+	Definir num,a,b,c Como Entero
+	Escribir "Ingrese hasta que numero de la serie de Fibonacci quiere ver:"
+	Leer num
+	a = 1; b = 1
+	Para i<-0 Hasta num
+		Escribir A," " Sin Saltar
+		c = a + b
+		a = b
+		b = c
+	FinPara
+	Escribir ""
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR// 
 SubProceso Ejercicio37
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 37"
+	Escribir "Conseguir el M.C.D."
+	Escribir "Ingrese los numeros"
+	Leer a,b
+	Mientras b <> 0
+		temp <- b
+		b <- a % b
+		a <- temp
+	FinMientras
+	mcd <- a
+	Escribir "El MCD es: ",mcd
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR// 
 SubProceso Ejercicio38
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 38"
+	Escribir "Determinar si el numero es perfecto"
+	Escribir "Ingrese un numero"
+	Escribir "Numero" Sin Saltar; Leer num
+	sum <- 0
+	Para i <- 1 hasta num/2
+		Si num % i == 0
+			sum <- sum + i
+		FinSi
+	FinPara
+	Si sum = num
+		Escribir num," ES un numero perfecto"
+	SiNo
+		Escribir num," NO es un numero perfecto"
+	FinSi
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio39
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 39"
+	Escribir "Aproximación de pi Gregory-Leibniz"
+	Leer num
+	den <- 1
+	Para i<-0 Hasta num-1
+		Si i%2 = 0
+			pid <- pid + 4/den
+		SiNo
+			pid <- pid - 4/den
+		FinSi
+		den <- den + 2
+	FinPara
+	Escribir "La aproximacion es: ",pid 
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio40
-	Escribir "AUN EN DESARROLLO"
+	Escribir "Ejercicio 40"
+	Escribir "Aproximacion de pi Nilakantha"
+	Definir aprox, actual, pre, sum Como Real
+	Definir signo,a,stop Como Entero
+	aprox <- 3; signo <- 1; stop <- 0; a <- 2
+	Escribir "Precision" Sin Saltar;
+	Leer pre
+	Mientras stop == 0
+		actual <- 4.0 / (a * (a+1) * (a+2)) * signo
+		sum <- sum + actual
+		Si Abs(actual) < pre
+			stop <- 1
+		FinSi
+		signo <- signo * (-1)
+		a <- a + 2
+	FinMientras
+	aprox <- aprox + sum
+	Escribir "La aproximacion es: ",aprox
 FinSubProceso
 //31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40----------31-40//
 //FINAL----------FINAL----------FINAL----------FINAL----------FINAL----------FINAL----------FINAL----------FINAL----------FINAL----------FINAL// 
