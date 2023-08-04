@@ -71,9 +71,10 @@ for (let index = 0; index < arr_frutas.length; index++) {
 
 console.log("------------")
 
-for(const key in arr_frutas){
-    if(Object.hasOwnProperty.call,arr_frutas){
-
+for (const key in arr_frutas) {
+    if (Object.hasOwnProperty.call(arr_frutas, key)) {
+        const element = arr_frutas[key];
+        console.log(element)
     }
 }
 
