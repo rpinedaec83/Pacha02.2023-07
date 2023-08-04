@@ -76,3 +76,31 @@ for(const key in arr_frutas){
 
     }
 }
+
+console.log("------------")
+
+let auto = {
+    marca:"toyota",
+    modelo:"corolla",
+    color:"rojo",
+    nro_puertas:2,
+    nro_ruedas:4,
+
+    acelerar(){
+        console.log("Subiendo la velocidad")
+    }
+    ,
+    frenar(){
+        console.log("Bajando la velocidad")
+    }
+    ,
+    girar(direccion){
+        console.log("Girando a la "+direccion)
+    }
+}
+console.log(auto.marca);
+console.log(auto.modelo);
+console.log(auto.color);
+auto.acelerar();
+auto.girar("derecha");
+auto.frenar();
