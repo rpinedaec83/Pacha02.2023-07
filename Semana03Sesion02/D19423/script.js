@@ -65,3 +65,47 @@ for (const key in arr_frutas) {
         console.log(element)
     }
 }
+
+
+let auto = {
+    color:"rojo",
+    nro_puertas: 2,
+    nro_ruedas : 4,
+
+    acelerar(){
+        console.log("aumentar velocidad")
+    },
+    frenar(){
+        console.log("reducir velocidad")
+    }
+    ,
+    girar(direccion){
+        console.log("girar hacia la "+ direccion)
+    }
+}
+
+console.log(auto.color)
+console.log(auto.nro_puertas)
+
+auto.acelerar()
+auto.girar("derecha")
+
+console.log(auto)
+
+for (const key in auto) {
+    if (Object.hasOwnProperty.call(auto, key)) {
+        const element = auto[key];
+        console.log(element)
+    }
+}
+
+
+// 1. Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos.
+let respuesta = prompt("Escriba el numero")
+
+let numero = parseInt(respuesta)
+if(numero > 99 && numero < 1000){
+    alert("tiene 3 digitos")
+}else{
+    alert("no tiene 3 digitos")
+}
