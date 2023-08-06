@@ -1,8 +1,8 @@
 for (let index = 0; index < 10; index++) {
-    console.log(index)
+    console.log(index);
 }
 
-let arr_frutas = ["pera","fresa","mandarina"]
+let arr_frutas = ["pera","fresa","mandarina"];
 
 for (let index = 0; index < arr_frutas.length; index++) {
     const element = arr_frutas[index];
