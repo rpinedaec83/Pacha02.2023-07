@@ -32,3 +32,32 @@ Lista de pendientes
 3. Preparar el almuerzo
 
 
+```
+<html>
+    <head>
+        <title>Título del sitio Web</title>
+    </head>
+    <body>
+    </body>
+</html>
+```
+
+> Hola. Éste es un párrafo de texto incluido en un bloque de cita. Fíjate que tengo una sangría con respecto al margen izquierdo.
+
+Un ejemplo es el sitio *[The Programming Historian en español][1]*
+[1]: http://programminghistorian.org/
+
+| Encabezado 1 | Encabezado 2 | Encabezado 3 |
+| --------- | --------- | --------- |
+| renglón 1, columna 1 | renglón 1, columna 2 | renglón 1, columna 3|
+| renglón 2, columna 1 | renglón 2, columna 2 | renglón 2, columna 3|
+| renglón 3, columna 1 | renglón 3, columna 2 | renglón 3, columna 3|
+
+
+
+| Alineado-izquierda | Centrado | Alineado-derecha |
+| :-------- | :-------: | --------: |
+| Manzanas | rojo | 5000 |
+| Plátanos | amarillo | 75 |
+
+
