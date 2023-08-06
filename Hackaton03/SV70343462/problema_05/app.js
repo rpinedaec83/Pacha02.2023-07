@@ -28,6 +28,6 @@ totalPago = totalCompra - descuento;
 
 document.querySelector('.cantidad').innerHTML = `Cantidad: ${cantidad}`;
 document.querySelector('.precio').innerHTML = `Precio por unidad: s/.${precio}`;
-document.querySelector('.totalCompra').innerHTML = `Importe de pago: s/.${totalCompra}`;
+document.querySelector('.totalcompra').innerHTML = `Importe de pago: s/.${totalCompra}`;
 document.querySelector('.descuento').innerHTML = `Importe de descuento: s/.${descuento}`;
-document.querySelector('.totalPago').innerHTML = `Total a pagar: s/.${totalPago}`;
+document.querySelector('.totalpago').innerHTML = `Total a pagar: s/.${totalPago}`;
