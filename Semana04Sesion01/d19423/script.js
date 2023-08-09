@@ -60,3 +60,39 @@ let mi_helado = new Helados("Mi super helado", "Fresa", 10.99)
 let mi_helado2 = new  Helados("Mi otro super helado","Ron Pasas", 15.00)
 mi_helado.vender()
 mi_helado2.vender()
+
+class Vehiculos{
+    constructor(color, nroRuedas, tipoMotor, tipoCombustible){
+        this.color = color,
+        this.nroRuedas = nroRuedas,
+        this.tipoMotor = tipoMotor,
+        this.tipoCombustible = tipoCombustible
+    }
+    acelerar(){
+        console.log("Estoy acelerando")
+    }
+    frenar(){
+        console.log("Estoy disminuyendo la velocidad")
+    }
+    detener(){
+        console.log("Estoy quieto")
+    }
+    girar(direccion){
+        console.log("Estoy girando a la "+direccion)
+    }
+    cargarCombustible(valor = 0){
+        
+        console.log(`Estoy cargando ${valor} soles de ${this.tipoCombustible} en mi auto de color ${this.color}`)
+    }
+}
+
+let carro = new Vehiculos("Rojo", 4, "Combustion", "Gasolina");
+carro.acelerar()
+carro.frenar()
+carro.girar("Derecha")
+carro.acelerar()
+carro.frenar()
+carro.girar("Izquierda")
+carro.frenar()
+carro.detener()
+carro.cargarCombustible(50.99)
