@@ -96,3 +96,99 @@ carro.girar("Izquierda")
 carro.frenar()
 carro.detener()
 carro.cargarCombustible(50.99)
+
+
+class Personas{
+    constructor(nombres, apellido_paterno, apellido_materno, tipo_documento, numero_documento, sexo, direccion){
+        this.nombres = nombres,
+        this.apellido_paterno = apellido_paterno,
+        this.apellido_materno = apellido_materno,
+        this.tipo_documento = tipo_documento,
+        this.numero_documento = numero_documento,
+        this.sexo=sexo,
+        this.direccion = direccion
+    }
+    cambiar_direccion(nueva_direccion){
+        this.direccion = nueva_direccion
+    }
+}
+
+class Cliente extends Personas{
+    
+    constructor(idCliente,nombres, apellido_paterno, apellido_materno, tipo_documento, numero_documento, sexo, direccion){
+        super(nombres, apellido_paterno, apellido_materno, tipo_documento, numero_documento, sexo, direccion);
+        let historial_credito = "BAJO"
+        this.idCliente = idCliente
+    }
+
+    comprar(producto, cantidad){
+        console.log(`estoy comprando ${producto} en la cantidad de ${cantidad}`)
+        this.historial_credito = "ALTO"
+    }
+    get get_historial() {
+        return this.historial_credito;
+    }
+    set cambiar_historial(historial) {
+        this.historial_credito = historial;
+    }
+}
+
+const mi_primer_cliente = new Cliente(1,"Roberto David","Pineda","Lopez","DNI","001575291","Masculino","Lima")
+
+
+console.log(mi_primer_cliente.nombres)
+
+console.log(mi_primer_cliente.direccion)
+mi_primer_cliente.cambiar_direccion("Chiclayo")
+console.log(mi_primer_cliente.direccion)
+console.log(mi_primer_cliente.get_historial)
+mi_primer_cliente.comprar("Helados",55)
+console.log(mi_primer_cliente.get_historial)
+mi_primer_cliente.cambiar_historial = "BAJO"
+console.log(mi_primer_cliente.get_historial)
+
+class EquiposElectronicos{
+    constructor(voltaje,tipo){
+        this.voltaje = voltaje,
+        this.tipo = tipo
+    }
+    encender(){
+        console.log(`Me encendi y estoy consumiendo ${this.voltaje} voltios`)
+    }
+    apagar(){
+        console.log(`Deje de consumir ${this.voltaje} voltios y me apague`)
+    }
+}
+
+class Televisores extends EquiposElectronicos{
+    constructor(voltaje, tipo, pulgadas, tecnologia){
+        super(voltaje,tipo)
+        let ubicacion = "";
+        this.pulgadas = pulgadas,
+        this.tecnologia = tecnologia
+    }
+
+    get get_ubicacion(){
+        return this.ubicacion
+    }
+    set set_ubicacion(nueva_ubicacion){
+        this.ubicacion = nueva_ubicacion
+    }
+
+    subir_volumen(){
+        console.log("subiendo el volumen")
+    }
+    cambiar_canal(numero_canal){
+        console.log(`cambiando al canal ${numero_canal}`)
+    }
+}
+
+let tv1 = new Televisores(220, "Hogar", 55, "LED")
+
+console.log(tv1.get_ubicacion)
+tv1.set_ubicacion = "Sala"
+console.log(tv1.get_ubicacion)
+tv1.encender()
+tv1.subir_volumen()
+tv1.cambiar_canal(99)
+tv1.apagar()
