@@ -656,7 +656,7 @@ SubProceso Ejercicio22
 	Para i<-0 Hasta num
 		suma <- suma + i
 	FinPara
-	Escribir "La suma de todos",suma
+	Escribir "La suma de todos es ",suma
 FinSubProceso
 //DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR----------DIVISOR//
 SubProceso Ejercicio23
