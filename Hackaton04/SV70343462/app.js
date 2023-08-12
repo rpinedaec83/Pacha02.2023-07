@@ -74,9 +74,110 @@ console.log(maxMin);
 // Escriba una función que tome una matriz de 10 enteros (entre 0 y 9) y devuelva una cadena en forma de un número de teléfono.
 //formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞ "(123) 456-7890"
 
-let numeroTelefono = (n) => { final = n.join(''); return `(${final.slice(0, 3)}) ${final.slice(3, 6)}-${final.slice(6)}` };
+let numeroTelefono = (n) => { final = n.join(''); return `(${final.slice(0, 3)}) ${final.slice(3, 6)}-${final.slice(6)}` }
 
 const formatPhoneNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const numTelefono = numeroTelefono(formatPhoneNumber);
 
 console.log(numTelefono);
+
+//Cree una función que tome una matriz de matrices con números. Devuelve una nueva matriz (única) con el mayor número de cada uno.
+//findLargestNums([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) ➞ [7, 90, 2]
+
+
+let findLargestNums = (matriz) => { mayorNum = matriz.map(matriz => Math.max(...matriz)); return mayorNum; }
+
+const m = [[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]];
+const mayor = findLargestNums(m);
+
+console.log(mayor);
+
+
+//Dada una palabra, escriba una función que devuelva el primer índice y el último índice de un carácter.
+//charIndex("hello", "l") ➞ [2, 3]
+// The first "l" has index 2, the last "l" has index 3.
+
+//charIndex("circumlocution", "c") ➞ [0, 8]
+// The first "c" has index 0, the last "c" has index 8.
+
+
+let primerUltimo = (palabra, caracter) => {
+    primerIndex = palabra.indexOf(caracter);
+    ultimoIndex = palabra.lastIndexOf(caracter);
+    return [primerIndex, ultimoIndex];
+}
+
+console.log(primerUltimo("hello", "l"))
+console.log(primerUltimo("circumlocution", "c"));
+
+//Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.
+//toArray({ a: 1, b: 2 }) ➞ [["a", 1], ["b", 2]]
+
+
+let toArray = (objeto) => Object.entries(objeto);
+
+const objeto = { a: 1, b: 2 };
+const matriz = toArray(objeto);
+
+console.log(matriz);
+
+
+//Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas.
+/*getBudgets([
+    { name: "John", age: 21, budget: 23000 },
+    { name: "Steve",  age: 32, budget: 40000 },
+    { name: "Martin",  age: 16, budget: 2700 }
+  ]) ➞ 65700
+  */
+
+
+let getBudgets = (persona) => {
+    return persona.reduce((totalPresupuesto, persona) => totalPresupuesto + persona.budget, 0);
+}
+
+const persona = [{ name: "John", age: 21, budget: 23000 },
+    { name: "Steve", age: 32, budget: 40000 },
+    { name: "Martin", age: 16, budget: 2700 }];
+                
+const totalPresupuesto = getBudgets(persona);
+console.log(totalPresupuesto);
+
+/*
+Cree una función que tome una matriz de estudiantes y devuelva una matriz de nombres de estudiantes.
+getStudentNames([
+  { name: "Steve" },
+  { name: "Mike" },
+  { name: "John" }
+]) ➞ ["Becky", "John", "Steve"]
+*/
+
+let getStudentNames = (alumno) => {
+    return alumno.map(alumno => alumno.name);
+}
+
+const alumno = [{ name: "Steve" }, { name: "Mike"}, { name: "John" }]
+const nombreAlumno = getStudentNames(alumno);
+console.log(nombreAlumno);
+
+/*
+    Escriba una función que convierta un objeto en una matriz de claves y valores.
+objectToArray({
+  likes: 2,
+  dislikes: 3,
+  followers: 10
+}) ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+
+*/
+
+// let objectToArray = (objeto) => {
+//     return Object.entries(objeto);
+// }
+
+// const object = {
+//     likes: 2,
+//     dislikes: 3,
+//     followers: 10
+// }
+
+// const matriz = objectToArray(objeto);
+// console.log(matriz);
