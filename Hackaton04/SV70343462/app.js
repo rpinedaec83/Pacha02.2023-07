@@ -181,3 +181,24 @@ objectToArray({
 
 // const matriz = objectToArray(objeto);
 // console.log(matriz);
+
+
+//Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados  incluyendo n.
+//squaresSum(3) ➞ 14
+// 1² + 2² + 3² =
+// 1 + 4 + 9 =
+// 14
+
+
+let squaresSum = (num) => {
+    let suma = 0;
+    for (let i = 1; i <= num; i++){
+        suma += i * i; 
+    }
+    return suma;
+}
+
+const num = 3;
+const result = squaresSum(num);
+console.log(result);
+
