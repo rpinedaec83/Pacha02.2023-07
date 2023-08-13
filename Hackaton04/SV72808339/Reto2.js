@@ -69,15 +69,26 @@ function min_max(numeros){
     }
     console.log([minimo,maximo])
 }
-const matriz = [12,5,8,2,9,3,1]
+const matriz = [1,2,3,4,5]
 min_max(matriz)
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 7:")
 function telefono(m){
+    let flag = true;
+    for (let i = 0; i < m.length; i++){
+        const e = m[i]
+        if (e > 9 || e < 0){
+            console.log("Solo números del 0-9")
+            flag = false;
+        }
+    
+    }
+    if(flag){
     console.log(`(${m[0]}${m[1]}${m[2]}) ${m[3]}${m[4]}${m[5]}-${m[6]}${m[7]}${m[8]}${m[9]}`)}
-const numero = [1,2,3,9,8,3,5,9,3,6]
+}
+const numero = [1,2,3,4,5,6,7,8,9,0]
 telefono(numero)
 console.log()
 
@@ -112,9 +123,10 @@ function findex(cadena,l){
         }
     }
     console.log(cadena)
-    console.log(`La primera "${l}" encontrada está en el índice ${resultado[0]} y la última en el índice ${resultado[resultado.length-1]}`)
+    console.log(`La primera "${l}" encontrada está en el índice ${resultado[0]} y la última "${l}" en el índice ${resultado[resultado.length-1]}`)
 }
-findex("avellana","a")
+findex("hello","l")
+findex("circumlocution","c")
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
@@ -197,40 +209,121 @@ console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 15:")
-
+function multiplicar(matriz){
+    for (let i = 0; i < matriz.length; i++){
+        matriz[i] = matriz[i] * matriz.length;
+    }
+    console.log(matriz)
+}
+multiplicar([2, 3, 1, 0])
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 16:")
-
+function countdown(numero){
+    let matriz = [];
+    for (let i = numero; i >= 0; i--) {
+        matriz.push(i)
+    }
+    console.log(matriz)
+}
+countdown(5)
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 17:")
-
+function diferencia(matriz){
+    let mayor = matriz[0]
+    let menor = matriz[0]
+    let diff = 0;
+    for (let i = 0; i < matriz.length; i++){
+        const e = matriz[i];
+        if (e > mayor){
+            mayor = e;
+        }
+        if (e < menor){
+            menor = e;
+        }
+    }
+    diff = mayor - menor
+    console.log(`La diferencia entre ${mayor} y ${menor} es de: ${diff}`)
+}
+diferencia([10, 4, 1, 4, -10, -50, 32, 21])
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 18:")
-
+function filtrar_lista(list){
+    let filtrado = []; 
+    for (let i = 0; i < list.length; i++){
+        const e = list[i];
+        if (typeof e === 'number'){
+            filtrado.push(e)
+        }
+    }
+    console.log(filtrado)
+}
+filtrar_lista([1, 2, 3, "x", "y", 10])
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 19:")
-
+function repetir(element,veces){
+    let matriz = [];
+    for (i = 0; i < veces; i++){
+        matriz.push(element)
+    }
+    console.log(matriz)
+}
+repetir(13,5);
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 20:")
-
+String.prototype.vreplace = function(v){
+    const chars = this.split('');
+    for (i = 0; i < chars.length ;i++){
+        const e = chars[i];
+        switch(e) {
+            case "A":
+            case "a":
+            case "E":
+            case "e":
+            case "I":
+            case "i":
+            case "O":
+            case "o":
+            case "U":
+            case "u":
+                chars[i] = v;
+                break;
+            default:
+        }
+    }
+    console.log(chars.join(''))
+}
+const cadena = "apples and bananas";
+cadena.vreplace("u")
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 21:")
-
+function find_nemo(cadena){
+    const palabras = cadena.split(' ');
+    const posicion = palabras.findIndex(palabra => palabra === "Nemo")
+    console.log(`Encontré a nemo en la palabra ${posicion+1}`)
+}
+find_nemo("Apuesto a que nunca podrás encontrar a Nemo sin importar cuánto intentes")
 console.log()
 
 //-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR-DIVISOR
 console.log("Función 22:")
-
+function cap_last(cadena){
+    const palabra = cadena.split('')
+    let last = palabra[palabra.length-1]
+    last = last.toString()
+    palabra[palabra.length-1] = last.toUpperCase()
+    console.log(palabra.join(''))
+}
+cap_last("hello")
 console.log()
