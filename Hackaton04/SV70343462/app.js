@@ -202,3 +202,93 @@ const num = 3;
 const result = squaresSum(num);
 console.log(result);
 
+
+//Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada
+//multiplyByLength([2, 3, 1, 0]) ➞ [8, 12, 4, 0]
+
+let multiplyByLength = (n) => {
+    let length = n.length;
+    let resultado = n.map(function (valor) {
+        return valor * length;
+    });
+    return resultado;
+}
+
+const lis = [2, 3, 1, 0];
+const lista = multiplyByLength(lis);
+console.log(lista);
+
+
+
+//Cree una función que tome un número como argumento y devuelva una matriz de números contando desde este número a cero.
+//countdown(5) ➞ [5, 4, 3, 2, 1, 0]
+
+let countdown = (n) => {
+    let resultado = [];
+    for (let i = n; i >= 0; i--){
+        resultado.push(i);
+    }
+    return resultado;
+}
+
+let numero = 5;
+let countdownList = countdown(numero);
+console.log(countdownList);
+
+
+
+//Cree una función que filtre las cadenas de una matriz y devuelva una nueva matriz que solo contenga enteros.
+//filterList([1, 2, 3, "x", "y", 10]) ➞ [1, 2, 3, 10]
+
+
+function filterList(lista) {
+    let filtroLista = lista.filter(function(valor) {
+      return typeof valor == "number" && Number.isInteger(valor);
+    });
+    return filtroLista;
+  }
+  
+
+  let list = [1, 2, 3, "x", "y", 10];
+  var resultadoFiltro = filterList(list);
+  console.log(resultadoFiltro); 
+  
+
+//  Cree una función que tome dos argumentos (elemento, tiempos). El primer argumento (elemento) es el elemento que necesita repetirse, mientras que el segundo argumento (veces) es la cantidad de veces que se debe repetir el elemento. Devuelve el resultado en una matriz.
+//repeat(13, 5) ➞ [13, 13, 13, 13, 13]
+
+
+let repeat = (elemento, tiempo) => {
+    let resultado = [];
+    for (let i = 0; i < tiempo; i++) {
+      resultado.push(elemento);
+    }
+    return resultado;
+  }
+const elemento = 13;
+const tiempo = 5;
+const resultadoLista = repeat(elemento, tiempo);
+console.log(resultadoLista);
+  
+
+//Te dan una cadena de palabras. Debe encontrar la palabra "Nemo" y devolver una cadena como esta: "¡Encontré a Nemo en [el orden de la palabra que encuentra nemo]!".
+//findNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+
+let findNemo = (n) => {
+    let palabra = n.split(" ");
+    let nemoIndex = palabra.indexOf("Nemo");
+    
+    if (nemoIndex != -1) {
+      let orden = nemoIndex + 1;  
+      return `I found Nemo at ${orden}!`;
+    } else {
+      return "Nemo not found :(";
+    }
+  }
+  
+
+  let palabra = "I am finding Nemo !";
+  let mensaje = findNemo(palabra);
+  console.log(mensaje);  
+  
+
