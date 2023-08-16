@@ -71,3 +71,4 @@ susuki.girar("izquierda");
 susuki.frenar();
 susuki.detener()
 susuki.cargar_combustible(60)
+
