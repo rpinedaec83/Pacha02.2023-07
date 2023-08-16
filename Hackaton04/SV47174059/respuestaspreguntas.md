@@ -1,0 +1,6 @@
+- ¿Cómo defines una función?
+Para definir una función en JavaScript que puedas exponer a través de HTTP utilizando Node.js, primero debes crear una función normal y luego configurar un servidor HTTP que maneje las solicitudes POST y responda con el resultado de la función en formato JSON. 
+- ¿Hasta cuantos argumentos puedes declarar en una función?
+En JavaScript, no hay un límite estricto en la cantidad de argumentos que puedes declarar en una función. Puedes pasar cualquier número de argumentos a una función, ya sea que estés utilizando HTTP o no. Sin embargo, es importante tener en cuenta que manejar un gran número de argumentos puede dificultar la legibilidad y mantenibilidad del código.
+
+En el contexto de HTTP y Node.js, si estás pasando múltiples argumentos a través del cuerpo de una solicitud POST, es posible que desees estructurar los datos de alguna manera para que sean más fáciles de manejar. Por ejemplo, podrías pasar un objeto JSON con los argumentos en lugar de pasarlos como parámetros separados.
