@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="nombre_aerolinea"></h1>
+    <h2 id="ubicacion"></h2>
+
+    <div id="div_reserva" style="display: none;">
+        
+        <label for="">Origen:</label>
+        <label for="" id="origen"></label>
+        <br>
+        <label for="">Nombre:</label>
+        <label for="" id="nombre_ori"></label>
+        <br>
+        <label for="">Apellidos:</label>
+        <label for="" id="apellidos_ori"></label>
+        <br>
+        <label for="">Destino:</label>
+        <label for="" id="destino"></label>
+        <br>
+        <label for="">Nombre:</label>
+        <label for="" id="nombre_dest"></label>
+        <br>
+        <label for="">Apellidos:</label>
+        <label for="" id="apellidos_dest"></label>
+        <br>
+        <label for="">Fechas:</label>
+        <label for="" id="fechas"></label>
+        <br>
+        <label for="">Vuelo de Salida:</label>
+        <label for="" id="avion_ida"></label>
+        <br>
+        <label for="">Vuelo de Retorno:</label>
+        <label for="" id="avion_vuelta"></label>
+    </div>
+
+    <button id="reservar">Reservar</button>
+    <script src="script.js"></script>
+    <script>
+        let parametros = {
+            Nombre:"LAN",
+            Ubicacion: "Lima"
+        }
+        Aerolinea.init(parametros)
+    </script>
+</body>
+</html>
