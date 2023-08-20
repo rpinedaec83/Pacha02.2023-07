@@ -8,6 +8,7 @@ class Telefonos {
         this.pago_parcial = false;
 
         this.diagnosticos = [];
+        this.repuestos = [];
     }
 
     static reg_series = [];
@@ -46,10 +47,36 @@ class Telefonos {
             }
         } else {console.log("No se ha dado la autorización del usuario o el pago del 50%")}
     }
+    revisar_diagnosticos(numero) {
+        
+    }
 
-    
+    añadir_repuesto(repuesto) {
+        if (this.pago_parcial && this.autorizacion){
+            this.repuestos.push(repuesto);
+            console.log("Se ha añadido el repuesto.")
+        } else {console.log("No se ha dado la autorización del usuario o el pago del 50%")}
+    }
+}
+
+class Tecnicos {
+    constructor(nombre,experiencia,...especializaciones){
+        this.nombre = nombre;
+        this.experiencia = experiencia;
+        this.especializaciones = especializaciones;
+    }
+
+    static añadir_tecnico(nombre,...especializaciones){
+        const tec = new Tecnicos(nombre,...especializaciones);
+        return tec;
+    }
+
+    describir(){
+        console.log(`${this.nombre} trabajó durante ${this.experiencia} años y tiene las siguientes especializaciones: ${this.especializaciones}`)
+    }
 
 }
+
 
 const telf_1 = Telefonos.crear_telefono("S21-123456", "123456789012345", "Samsung", "Galaxy S21");
 console.log(telf_1);
@@ -60,5 +87,8 @@ console.log(telf_3);
 
 telf_3.diagnosticar("Batería muerta")
 console.log(telf_3.diagnosticos[0])
+
+tec_1 = Tecnicos.añadir_tecnico("Javier",5,"Apple","Samsung")
+tec_1.describir()
 
 
