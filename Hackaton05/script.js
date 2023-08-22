@@ -43,38 +43,38 @@ class Repuesto {
   }
 }
 
-const tecnicos = [
+let tecnicos = [
   new Tecnico('Técnico 1', ['Samsung', 'Apple']),
   new Tecnico('Técnico 2', ['Huawei', 'Xiaomi']),
 
 ];
 
 function registroCliente() {
-  const numeroSerie = prompt('Ingrese el número de serie del teléfono:');
-  const imei = prompt('Ingrese el IMEI del teléfono:');
+  let numeroSerie = prompt('Ingrese el número de serie del teléfono:');
+  let imei = prompt('Ingrese el IMEI del teléfono:');
   
 
-  const telefono = new Telefono(numeroSerie, imei);
+  let telefono = new Telefono(numeroSerie, imei);
 
-  const diagnostico = prompt('Realice el primer diagnóstico:');
+  let diagnostico = prompt('Realice el primer diagnóstico:');
   telefono.agregarDiagnostico(diagnostico);
 
-  const abono = parseFloat(prompt('Ingrese el abono del 50% para autorizar la reparación:'));
+  let abono = parseFloat(prompt('Ingrese el abono del 50% para autorizar la reparación:'));
   telefono.autorizarReparacion(abono);
 
-  const repuestoNombre = prompt('Ingrese el nombre del repuesto:');
-  const repuestoPrecio = parseFloat(prompt('Ingrese el precio del repuesto:'));
-  const repuesto = new Repuesto(repuestoNombre, repuestoPrecio);
+  let repuestoNombre = prompt('Ingrese el nombre del repuesto:');
+  let repuestoPrecio = parseFloat(prompt('Ingrese el precio del repuesto:'));
+  let repuesto = new Repuesto(repuestoNombre, repuestoPrecio);
   telefono.agregarRepuesto(repuesto);
 
-  const tecnico = asignarTecnico(telefono);
+  let tecnico = asignarTecnico(telefono);
   telefono.estado = `En reparación por ${tecnico.nombre}`;
 
   mostrarInformacion(telefono);
 }
 
 function asignarTecnico(telefono) {
-  for (const tecnico of tecnicos) {
+  for (let tecnico of tecnicos) {
       if (tecnico.skills.includes(telefono.marca)) {
           return tecnico;
       }
@@ -100,7 +100,7 @@ function mostrarInformacion(telefono) {
   let telefonorepuesto = document.getElementById("telefonorepuesto")
         telefonorepuesto.innerText = telefono.repuesto.nombre;
 */
-  const output = document.getElementById('output');
+  let output = document.getElementById('output');
   output.innerHTML = `
       <h2>Estado del Teléfono</h2>
       <p>Número de Serie: ${telefono.numeroSerie}</p>
