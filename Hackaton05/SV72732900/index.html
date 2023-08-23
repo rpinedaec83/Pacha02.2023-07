@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Hackaton 4</title>
+</head>
+<body>
+
+    <div class="stateInfo">
+        <h3>Estado</h3>
+        <h4 id="stateInfo"></h4>
+    </div>
+
+    <div class="customerInfo">
+        <h3>Datos del solicitante</h3>
+        <label for="fname">Nombre del cliente:</label>
+        <input type="text" id="fname">
+        <label for="fdocument" class="fdoc">Numero de documento:</label>
+        <input type="text" id="fdocument">
+        <button onclick="saveCustomer()" id="customerBtn" class="customerBtn" >Guardar</button>
+    </div>
+
+    <div class="phoneInfo">
+        <h3>Datos del equipo</h3>
+        <div class="myBrand">
+            <button onclick="myBrand()" class="dropbtn" id="dropbtn_marca">Marca <b>v</b></button>
+            <div id="myBrand" class="dropdown-content">
+            <a href="#" onclick="changeBrand(this.innerHTML)">Samsung</a>
+            <a href="#" onclick="changeBrand(this.innerHTML)">Xiaomi</a>
+            <a href="#" onclick="changeBrand(this.innerHTML)">Apple</a>
+            </div>
+        </div>
+        <label for="" id="marca">SAMSUNG</label>
+        
+        <div class="myModel">
+            <button onclick="myModel()" class="dropbtn" id="dropbtn_modelo">Modelo <b>v</b></button>
+            <div id="myModel" class="dropdown-content">
+            </div>
+        </div>
+        <label for="" id="modelo">Redmi 12 5G</label>
+        <label for="fdoc" class="fdoc" style="margin-left: 20px;">IMEI:</label>
+        <input type="text" id="fdoc_input" placeholder="Ingrese 15 digitos" style="margin-left: 60px;">
+        <button onclick="savePhone()" id="phoneBtn" type="button" class="dropbtn" style="margin: 0 auto;">Validar</button>
+    </div>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
