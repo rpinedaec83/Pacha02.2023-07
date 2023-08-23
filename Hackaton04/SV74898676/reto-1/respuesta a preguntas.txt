@@ -1,0 +1,20 @@
+¿Cómo defines una función?
+--------------------------
+-> En JavaScript para definir una función se usa la siguiente sintaxis:
+
+function nameFunction(arg1, arg2,...) {
+	/*function content*/
+}
+
+function: palabra reservada para empezar la definición de una función.
+nameFunction: nombre con la que vamos a reconocer a la función.
+arg1, arg2: argumentos que podemos mandar a la función y que esta las procese.
+... : indica que podemos mandar una cantidad de argumentos indefinida.
+function content: indica que en esa parte de la función, entre las llaves iría el contenido
+que desarrollaría la función.
+
+¿Hasta cuantos argumentos puedes declarar en una función?
+---------------------------------------------------------
+La cantidad de argumentos en una función es indefinida, es decir, podemos mandar la cantidad de parámetros que 
+deseemos, pero por buenas prácticas debemos encontrar la manera de evitar enviar una gran cantidad de parámetros,
+una solución podría ser enviar un objeto nativo del lenguaje o instancias de objetos hechos con clases.

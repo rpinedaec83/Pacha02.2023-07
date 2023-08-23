@@ -1,0 +1,3 @@
+const capLast = (word) => {
+
+}

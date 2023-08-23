@@ -22,8 +22,6 @@
 
 9. Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%.
 
-10. Hacer un algoritmo en JavaScript que diga si un número es par o impar.
-
 11. Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor.
 
 12. Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor.
@@ -102,8 +100,6 @@
 
 34. Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno nueve.
 
-35. Hacer un algoritmo en JavaScript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
-
 36. Hacer un algoritmo en JavaScript para calcular la serie de Fibonacci.
 
 37. Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
@@ -118,4 +114,4 @@
 
 40. Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es:
 
-    Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - (4/(12*13*14) ...
+    Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...
