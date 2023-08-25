@@ -10,11 +10,18 @@ const my_page = function () {
         }
         let title = document.getElementsByTagName("title");
         title[0].text = titulo;
+        cargaUsuario();
         cargarCarrito();
         crearEstructura();
         cargarProductos();
     }
-
+    function cargaUsuario(){
+        let strLogin = sessionStorage.getItem("login");
+        let objLogin = JSON.parse(strLogin);
+        if(strLogin != null){
+            $("#modal-443788").text(`Hola ${objLogin.email}`)
+        }
+    }
     function cargarCarrito(){
         strCarrito = localStorage.getItem("carrito");
         arrCarrito = JSON.parse(strCarrito);
@@ -80,14 +87,19 @@ const my_page = function () {
         productos.push(objProducto);
     }
     function eventos() {
-        
+        $("#form").submit(function (event) {
+            let formData = {
+              email: $("#email").val(),
+              pass: $("#pass").val(),
+             
+            };
+            
+            sessionStorage.setItem("login",JSON.stringify(formData));
+            event.preventDefault();
+          });
     }
-
-    function traer_datos(){
-       // localStorage.setItem("lastname", "Pineda");
-        $("#apellidos").text( localStorage.getItem("lastname"));
-        localStorage.removeItem("lastname")
-    }
+    
+    
     return {
         init: function (parametros) {
             titulo = parametros.titulo;
