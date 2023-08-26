@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reparaciones de Celulares</title>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Reparaciones de Celulares</h1>
+    </header>
+
+    <main>
+        <button id="iniciarReparacionBtn">Iniciar Reparación</button>
+        <div id="estadoEquipos"></div>
+    </main>
+
+    <footer>
+        <script src="reparaciones.js"></script>
+        <script>
+            // Agrega tu código JavaScript aquí
+            document.getElementById('iniciarReparacionBtn').addEventListener('click', function() {
+              // Ejecuta la función de iniciarReparacion con tus datos
+              sucursal1.iniciarReparacion(telefono1, tecnico1, 'Pantalla rota');
+              mostrarEstadoEquipos();
+            });
+
+            function mostrarEstadoEquipos() {
+              const estadoEquiposDiv = document.getElementById('estadoEquipos');
+              estadoEquiposDiv.textContent = '';
+
+              for (const reparacion of sucursal1.reparaciones) {
+                const equipoDiv = document.createElement('div');
+                equipoDiv.textContent = `Equipo en reparación:\n${reparacion.telefono.obtenerInformacion()}`;
+                estadoEquiposDiv.appendChild(equipoDiv);
+              }
+            }
+        </script>
+    </footer>
+</body>
+</html>
