@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="checkCookies()">
+
+    <div id="div1">
+
+    </div>
+    <div class="cls_div"></div>
+    <div class="cls_div"></div>
+    <div class="cls_div"></div>
+
+    <a id="pagina_externa" href="http://www.x-codec.net">x-codec</a>
+
+    <label for="cars">Choose a car:</label>
+
+    <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <br>
+
+    <input type="text" name="" id="txt_nombre">
+    <textarea name="" id="result" cols="30" rows="10"></textarea>
+
+    <br>
+
+    <button id="boton_prueba" type="button">Click Me</button>
+
+    <script src="script.js"></script>
+    <script>
+        let parametros = {
+            titulo: "Mi primera pagina web"
+        }
+        my_page.init(parametros)
+    </script>
+
+</body>
+
+</html>
