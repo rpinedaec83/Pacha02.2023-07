@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparación de Celulares</title>
+</head>
+<body>
+    <h1>Sistema de Reparación de Celulares</h1>
+    
+    <h2>Información del Teléfono</h2>
+    <form id="telefonoForm">
+        <label for="numeroSerie">Número de Serie:</label>
+        <input type="text" id="numeroSerie" required><br>
+
+        <label for="imei">IMEI:</label>
+        <input type="text" id="imei" required><br>
+
+        <label for="reportado">Reportado:</label>
+        <input type="checkbox" id="reportado"><br>
+    </form>
+
+    <h2>Información del Usuario</h2>
+    <form id="usuarioForm">
+        <label for="autorizacion">Autorización:</label>
+        <input type="checkbox" id="autorizacion"><br>
+
+        <label for="abono">Abono (50% de la reparación):</label>
+        <input type="number" id="abono" required><br>
+    </form>
+
+    <h2>Acciones</h2>
+    <button onclick="autorizarReparacion()">Autorizar Reparación</button>
+    <button onclick="agregarRepuesto()">Agregar Repuesto</button>
+
+    <div id="estadoReparacion">
+        <h2>Estado de la Reparación</h2>
+        <p id="estado">En espera</p>
+    </div>
+
+    <script>
+        // Función para autorizar la reparación
+        function autorizarReparacion() {
+            const numeroSerie = document.getElementById('numeroSerie').value;
+            const imei = document.getElementById('imei').value;
+            const reportado = document.getElementById('reportado').checked;
+            const autorizacion = document.getElementById('autorizacion').checked;
+            const abono = parseFloat(document.getElementById('abono').value);
+
+            // Realizar la lógica para autorizar la reparación y actualizar el estado
+            // Puedes llamar a la función autorizarReparacionEnServidor aquí
+
+            // Actualizar el estado en la interfaz
+            const estadoElement = document.getElementById('estado');
+            estadoElement.innerText = 'En proceso';
+        }
+
+        // Función para agregar un repuesto
+        function agregarRepuesto() {
+            const repuesto = prompt('Ingrese el nombre del repuesto:');
+            
+            // Realizar la lógica para agregar el repuesto y actualizar la lista de repuestos
+        }
+    </script>
+</body>
+</html>
