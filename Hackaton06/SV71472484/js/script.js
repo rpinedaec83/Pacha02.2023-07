@@ -11,14 +11,12 @@ const repararCelular = function () {
         crear_tecnicos();
         crear_imei();
         registarTelefonos();
-        cargarTelefonos();
-        //validarCelular();
     }
     function cargaUsuario(){
         let strLogin = sessionStorage.getItem("login");
         let objLogin = JSON.parse(strLogin);
         if(strLogin != null){
-            $("#modal-512127").text(`Bienvenido: ${objLogin.email}`)
+            $("#modal-512127").text(`Bienvenido: ${objLogin.email}`);
             $("#sede").text(`Sede: ${objLogin.sede}`)
         }
     }
@@ -82,7 +80,8 @@ const repararCelular = function () {
                 telefonos[elemento.id].asignarTecnico(tecnicos[elemento.id])
                 telefonos[elemento.id].agregarEstado("REPARADO")
             }
-            localStorage.setItem("telefonos",JSON.stringify(telefonos[elemento.id]));
+            localStorage.setItem("telefonos",JSON.stringify(telefonos));
+            cargarTelefonos();
         });
     }
     function cargarTelefonos(){
