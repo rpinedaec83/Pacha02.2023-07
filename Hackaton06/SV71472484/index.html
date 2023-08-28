@@ -47,45 +47,6 @@
     </div>
 
 	<div class="container-fluid">
-
-		<div class="row">
-			<div class="col-md-12">
-				 <a id="modal-481741" href="#modal-container-481741" role="button" class="btn" data-toggle="modal">Ingresar Sede</a>
-				
-				<div class="modal fade" id="modal-container-481741" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="myModalLabel">
-									Seleccionar Sede
-								</h5> 
-								<button type="button" class="close" data-dismiss="modal">
-									<span aria-hidden="true">×</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								<form id="form_sede" role="form">
-									<div class="form-group"> 
-										<select id="vSede" class="form-control">
-											<option>PRINCIPAL</option>
-											<option>SEDE 1</option>
-											<option>SEDE 2</option>
-										  </select>
-									</div>
-									<button type="submit" class="btn btn-primary">
-										Seleccionar
-									</button>
-								</form>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
-				
-			</div>
-		</div>
-
 	<div class="row">
 		<div class="col-md-12">
 			<a id="modal-512127" href="#modal-container-512127" role="button" class="btn" data-toggle="modal">Iniciar Sesión</a>		
@@ -115,6 +76,16 @@
 									</label>
 									<input id="pass" type="password" class="form-control" id="exampleInputPassword1">
 								</div>
+								<div class="form-group">
+									<label for="exampleInputEmail1">
+										Sede
+									</label>
+								<select id="vSede" class="form-control">
+									<option>PRINCIPAL</option>
+									<option>SEDE 1</option>
+									<option>SEDE 2</option>
+								  </select>
+								</div>
 								<button type="submit" class="btn btn-primary">
 									Ingresar
 								</button>
@@ -128,93 +99,16 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h2 id="sistema" class="center">
-							h3
+							
 						</h2>
+						<h4 id="sede" class="center">
+							Ingrese al sistema
+						</h4>
 					</div>
 				</div>
 			</div>
 
-			<table class="table table-sm">
-				<thead>
-					<tr>
-						<th>
-							#
-						</th>
-						<th>
-							Product
-						</th>
-						<th>
-							Payment Taken
-						</th>
-						<th>
-							Status
-						</th>
-						<th>
-						
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Default
-						</td>
-						<td>
-							<button type="button" class="btn btn-success btn-sm">
-								Atender
-							</button>
-						</td>
-					</tr>
-					<tr class="table-active">
-						<td>
-							1
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							01/04/2012
-						</td>
-						<td>
-							Approved
-						</td>
-						<td>
-							<button type="button" class="btn btn-success btn-sm">
-								Atender
-							</button>
-						</td>
-					</tr>
-					<tr class="table-success">
-						<td>
-							2
-						</td>
-						<td>
-							TB - Monthly
-						</td>
-						<td>
-							02/04/2012
-						</td>
-						<td>
-							Declined
-						</td>
-						<td>
-							<button type="button" class="btn btn-success btn-sm">
-								Atender
-							</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-
+			<div id="telefonos">No hay Telefonos</div>
 		</div>
 	</div>
 </div>
