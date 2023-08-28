@@ -10,7 +10,11 @@ const repararCelular = function () {
         crear_telefonos();
         crear_tecnicos();
         crear_imei();
-        registarTelefonos();
+        let strLogi = sessionStorage.getItem("login");
+        if(strLogi != null){
+            registarTelefonos();
+        } 
+        cargarTelefonos();
     }
     function cargaUsuario(){
         let strLogin = sessionStorage.getItem("login");
@@ -18,6 +22,7 @@ const repararCelular = function () {
         if(strLogin != null){
             $("#modal-512127").text(`Bienvenido: ${objLogin.email}`);
             $("#sede").text(`Sede: ${objLogin.sede}`)
+            registarTelefonos();
         }
     }
    function crear_telefonos(){
@@ -50,22 +55,14 @@ const repararCelular = function () {
              
             };          
             sessionStorage.setItem("login",JSON.stringify(formData));
-            sessionStorage.setItem("sede",JSON.stringify(formSede));
             event.preventDefault();
             cargaUsuario();
-          });
-
-          $("#form_sede").submit(function (event) {
-            let formSede = {
-              sede: $("#vSede").val(),             
-            };       
-            localStorage.setItem("sede",JSON.stringify(formSede));
-            event.preventDefault();
-            cargaSede();
           });
     }
 
     function registarTelefonos(){
+        let strTel = sessionStorage.getItem("telefonos");
+        if(strTel == null){        
         telefonos.forEach(elemento => {
             if(elemento.imei == imei[0].nImei){
                 telefonos[elemento.id].rReportado("SI");
@@ -83,6 +80,7 @@ const repararCelular = function () {
             localStorage.setItem("telefonos",JSON.stringify(telefonos));
             cargarTelefonos();
         });
+    }
     }
     function cargarTelefonos(){
         $('#telefonos').empty();
@@ -122,7 +120,8 @@ const repararCelular = function () {
             </tr>
         </thead>
         <tbody>`
-        telefonos.forEach(element => {
+        let telestorage = JSON.parse(localStorage.getItem("telefonos"));
+        telestorage.forEach(element => {
           strHtml +=  `<tr>
           <td>
               ${element.marca}
@@ -143,7 +142,7 @@ const repararCelular = function () {
            ${element.reportado}
           </td>
           <td>
-          ${element.tecnico}
+          ${tecnicos[element.id].vNombres}
          </td>
          <td>
          ${element.total}
@@ -154,8 +153,7 @@ const repararCelular = function () {
        <td>
        ${element.mitad}
       </td>
-      </tr>
-      <tr><td id ="detalle_${element.id}" ></td></tr>`
+      </tr>`
         });
         strHtml += `</tbody>
         </table>`;
