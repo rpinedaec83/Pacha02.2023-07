@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKATON 06</title>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <h1 id="sistema"></h1>
+    <h3 id="sede"></h3>
+    <button id="ingresar">Ingresar Celular</button>
+    <br>
+    <div id="div_servicio" style="display: none;">
+        <h3>Detalle de Servicio: </h3>
+        <label for="">Marca: </label>
+        <label for="" id="marca"></label>
+        <br>
+        <label for="">Serie: </label>
+        <label for="" id="serie"></label>
+        <br>
+        <label for="">IMEI: </label>
+        <label for="" id="imei"></label>
+        <br>
+        <label for="">Diagnostico: </label>
+        <label for="" id="diagnostico"></label>
+        <br>
+        <label for="">Costo del Servicio: </label>
+        <label for="" id="costo"></label>
+        <br>
+        <label for="">Abono del Cliente: </label>
+        <label for="" id="abono"></label>
+        <br>
+        <label for="">Tecnico a cargo: </label>
+        <label for="" id="tecnico"></label>
+        <br>
+        <label for="">Repuestos: </label>
+        <label for="" id="repuestos"></label>
+        <br>
+        <label for="">Restante de Pago: </label>
+        <label for="" id="pago"></label>
+        <br> 
+
+    </div>
+
+    <script>
+        let parametros = {
+            vSistema:"Servicio de Reparacion de Celulares",
+            vSede: "Principal"
+        }
+        repararCelular.init(parametros)
+    </script> 
+</body>
+</html>
