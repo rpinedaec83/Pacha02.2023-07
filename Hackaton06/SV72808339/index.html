@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitema hktn6</title>
+<style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+      background-color: rgb(182, 182, 182);
+      padding: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    label, input, select {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Añadir Sucursal</h1>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre_sucursal" name="nombre" placeholder="Escribe el nombre del local">
+
+  <button id="crear_sucursal_button">Crear</button>
+
+</div>
+
+<div class="container">
+  <h1>Añadir Celular</h1>
+  <label for="serie">Serie:</label>
+  <input type="text" id="serie" name="serie" placeholder="Escribe la serie del equipo">
+
+  <label for="imei">IMEI:</label>
+  <input type="text" id="imei" name="imei" placeholder="Escribe el IMEI">
+
+  <label for="marca">Marca:</label>
+  <input type="text" id="marca" name="marca" placeholder="Escribe la marca">
+
+  <label for="modelo">Modelo:</label>
+  <input type="text" id="modelo" name="modelo" placeholder="Escribe el modelo">
+
+  <label for="estado">Estado:</label>
+  <select id="estado" name="estado">
+    <option value="0">Selecciona el estado</option>
+    <option value="1">En revisión</option>
+    <option value="2">Diagnosticado</option>
+    <option value="3">En reparación</option>
+    <option value="4">Reparado</option>
+  </select>
+
+  <label for="sucursal">Sucursal:</label>
+  <select id="sucursal" name="sucursal">
+    <option value="0">Selecciona la sucursal</option>
+
+  </select>
+
+</div>
+
+<div class="container">
+  <h1>Añadir Tecnico</h1>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" placeholder="Escribe su nombre">
+
+  <label for="imei">IMEI:</label>
+  <input type="text" id="imei" name="imei" placeholder="Escribe el IMEI">
+
+  <label for="marca">Marca:</label>
+  <input type="text" id="marca" name="marca" placeholder="Escribe la marca">
+
+  <label for="modelo">Modelo:</label>
+  <input type="text" id="modelo" name="modelo" placeholder="Escribe el modelo">
+
+  <label for="estado">Estado:</label>
+  <select id="estado" name="estado">
+    <option value="0">Selecciona el estado</option>
+    <option value="1">En revisión</option>
+    <option value="2">Diagnosticado</option>
+    <option value="3">En reparación</option>
+    <option value="4">Reparado</option>
+
+  </select>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
