@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nombre": "RX-78-2",
+        "descuento": 20,
+        "precio": 120.99,
+        "img": "img/4.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "AERIAL",
+        "descuento": 15,
+        "precio": 140.99,
+        "img": "img/5.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Z Gok",
+        "descuento": 40,
+        "precio": 130.99,
+        "img": "img/6.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "AERIAL",
+        "descuento": 15,
+        "precio": 140.99,
+        "img": "img/5.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Z Gok",
+        "descuento": 40,
+        "precio": 130.99,
+        "img": "img/6.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "AERIALLLL",
+        "descuento": 15,
+        "precio": 140.99,
+        "img": "img/5.jpg"
+    }
+]
