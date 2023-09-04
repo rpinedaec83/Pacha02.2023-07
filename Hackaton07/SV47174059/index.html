@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Gateway</title>
+  <style>
+    /* Agrega estilos CSS aquí según tu diseño */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #pokemon-image {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>API Gateway</h1>
+  
+  <!-- Formulario para consultar datos de GitHub -->
+  <form id="github-form">
+    <label for="github-username">GitHub Username:</label>
+    <input type="text" id="github-username" required>
+    <button type="submit">Consultar GitHub</button>
+  </form>
+
+  <!-- Resultado de la consulta de GitHub -->
+  <div id="github-result">
+    <!-- Los resultados se mostrarán aquí -->
+  </div>
+
+  <!-- Formulario para consultar imagen de Pokémon -->
+  <form id="pokemon-form">
+    <label for="pokemon-name">Nombre de Pokémon:</label>
+    <input type="text" id="pokemon-name" required>
+    <button type="submit">Consultar Pokémon</button>
+  </form>
+
+  <!-- Resultado de la consulta de Pokémon -->
+  <div id="pokemon-result">
+    <img id="pokemon-image" src="" alt="Imagen de Pokémon">
+  </div>
+
+  <script>
+    // JavaScript para manejar las solicitudes AJAX y mostrar resultados
+    const githubForm = document.getElementById('github-form');
+    const githubResult = document.getElementById('github-result');
+    const pokemonForm = document.getElementById('pokemon-form');
+    const pokemonImage = document.getElementById('pokemon-image');
+
+    githubForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('github-username').value;
+      try {
+        const response = await fetch(`/github/${username}`);
+        const data = await response.json();
+        // Muestra los resultados en githubResult
+        githubResult.innerHTML = JSON.stringify(data, null, 2);
+      } catch (error) {
+        githubResult.innerHTML = 'Error al consultar los datos de GitHub';
+      }
+    });
+
+    pokemonForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const pokemonName = document.getElementById('pokemon-name').value;
+      try {
+        const response = await fetch(`/pokemon-image/${pokemonName}`);
+        const data = await response.json();
+
+        if (data.imageUrl) {
+          pokemonImage.src = data.imageUrl;
+          pokemonImage.style.display = 'block';
+        } else {
+          pokemonImage.style.display = 'none';
+          // Puedes mostrar un mensaje de error si no se encuentra la imagen
+        }
+      } catch (error) {
+        pokemonImage.style.display = 'none';
+        // Manejar errores aquí
+      }
+    });
+  </script>
+</body>
+</html>
