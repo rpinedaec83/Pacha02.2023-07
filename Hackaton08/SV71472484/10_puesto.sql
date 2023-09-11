@@ -17,5 +17,4 @@ values('JEFE DE TI',1),
 ('ADMINISTRADOR',1),
 ('OPERARIO',1),
 ('OBRERO',1),
-('SECRETARIA',1)
-;
+('SECRETARIA',1);
