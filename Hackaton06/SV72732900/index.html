@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="login_container" class="w-screen h-screen bg-gray-400/[0.5] absolute left-0 top-0 z-10 flex justify-center items-center">
+    <div class="w-72 h-40 bg-white rounded-md pt-2 relative">
+      <h2 class="w-fit mx-auto font-semibold">Login</h2>
+      <form action="" class="pt-2">
+        <label for="name_">Nombre:</label>
+        <input type="text" class="border-[1px] border-black rounded-md pl-2 ml-6 w-38" name="name_" id="name_">
+        <label for="document_">Documento:</label>
+        <input type="text" class="border-[1px] border-black rounded-md pl-2 mt-4 w-38" name="document_" id="document_">
+        <button type="button" onclick="my_page.onsubmitForm()" class="border-2 mt-3 ml-28 rounded-lg px-3">Ingresar</button>
+        <div id="login_close" class="cursor-pointer font-bold text-white w-6 h-6 flex justify-center items-center bg-black rounded-full absolute right-[-10px] top-[-10px]">x</div>
+      </form>
+    </div>
+  </div>
+  <header>
+    <nav class="h-12 bg-sky-600 flex justify-between items-center p-7">
+      <div class="flex justify-center items-center gap-3">
+        <button id="logButton" onclick="my_page.abrirLogin()" class="border-[1px] border-black bg-gray-900 rounded-lg text-white p-1">Ingresar</button>
+        <h2 class="inline-block font-sans text-white text">User: <span class="font-bold text-xl" id="userName">anonimo</span></h2>
+      </div>
+      <div class="flex">
+        <h3 class="inline-block font-sans font-semibold mr-2 text-white">Sucursal: </h3>
+        <select name="sucursales" id="sucursales" onchange="my_page.filtrarAtenciones()">
+          <option value="principal">Principal</option>
+          <option value="secundaria">Secundaria</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main class="p-5">
+    <div><h1 class="font-sans font-bold text-xl">Cuadro de atenciones [sucursal: <span id="currentSuc">principal</span>]</h1></div>
+    <div id="services" class="flex flex-wrap p-5 gap-4">
+      <!-- <div id="card_service"  class="w-48 h-48 border-[1px] border-slate-600 rounded-lg pt-3 flex items-center flex-col relative">
+          <img src="https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-14-Pro-Max-9907.jpg" alt="phone photo" class="w-24 h-24 rounded-lg object-cover">
+          <h3 class="text-sm font-bold">Estado: <span id= "ID"></span>1/4</h3>
+          <h3 class="text-sm font-bold">ID: <span id= "Estado" class="font-normal">1693094315198</span></h3>
+          <h3 class="text-sm font-bold">Cliente: <span id= "Cliente" class="font-normal">Marco Zapata</span></h3>
+          <div id="close_123" class="cursor-pointer font-bold text-white w-6 h-6 flex justify-center items-center bg-black rounded-full absolute right-[-10px] top-[-10px]">x</div>
+      </div> -->
+    </div>
+  </main>
+  <script src="./script.js"></script>
+  <script>
+      let parametros = {
+            titulo: "WebStorage"
+        }
+      my_page.init(parametros)
+  </script>
+</body>
+</html>
