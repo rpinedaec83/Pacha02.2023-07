@@ -1,4 +1,7 @@
 let productos=[];
+
+
+
 const my_page = function () {
     let titulo;
     

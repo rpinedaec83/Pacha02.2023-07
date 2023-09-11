@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon 06</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+
+<body>
+    <header class="hero">
+
+        <nav id="inicio-container" class="nav container">
+
+            <div class="nav_logo">
+                <h2 class="nav_title">Pedro Salazar</h2>
+            </div>
+
+            <ul class="nav_link nav_link--menu">
+
+                <li class="nav_items">
+                    <a href="#inicio-container" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#preguntas-container" class="nav_links">Preguntas Frecuentes</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#redes-container" class="nav_links">Redes</a>
+                </li>
+
+                <img src="./img/close.svg" alt="" class="nav_close">
+
+            </ul>
+
+            <div class="nav_menu">
+                <img src="./img/menu-rigth.svg" alt="" class="nav_img">
+            </div>
+
+        </nav>
+
+        <section class="hero_container container">
+            <h1 class="hero_title">Servicio Tecnico Celulares</h1>
+            <p class="hero_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos facilis ea!
+                Veritatis tempore eum amet assumenda nobis tempora, delectus quisquam aliquid itaque illo laudantium
+                enim, id minus natus illum.</p>
+            <a href="#price-container" class="cta">Repara Ya!</a>
+        </section>
+
+    </header>
+
+    <main>
+
+        <section class="container about">
+            <h2 class="subtitle">Que quieres Reparar?</h2>
+            <p class="about_paragraph">Todo lo necesario y obligatorio que deberias de tener para poder jugar</p>
+
+            <div class="about_main">
+                <article class="about_icons">
+                    <img src="./img/consolas.svg" alt="">
+                    <h3 class="about_title">Accesorios Nuevos</h3>
+                    <p class="about_paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+                        provident quaerat repellat vero consequuntur nesciunt rerum hic. Nulla in, numquam aut quis ad
+                        doloremque sint illo voluptatibus autem dolores! Architecto!</p>
+                </article>
+                <article class="about_icons">
+                    <img src="./img/mandos.svg" alt="">
+                    <h3 class="about_title">Accesorios Usados</h3>
+                    <p class="about_paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore
+                        provident quaerat repellat vero consequuntur nesciunt rerum hic. Nulla in, numquam aut quis ad
+                        doloremque sint illo voluptatibus autem dolores! Architecto!</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="knowledge">
+            <div class="knowledge_container container">
+                <div class="knowledge_text">
+                    <h2 class="subtitle">Todo sobre Nosotros</h2>
+                    <p class="knowlegde_paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam sed
+                        obcaecati natus commodi unde? Dolorum iste doloremque asperiores eveniet magnam placeat a?
+                        Quaerat excepturi alias at fuga deserunt tempore neque.</p>
+                    <a href="#" class="cta">Conoce Mas</a>
+                </div>
+
+                <figure class="knowledge_picture">
+                    <img src="./img/imgencuentranos.jpg" alt="" class="knowledge_img">
+                </figure>
+            </div>
+        </section>
+
+        <!-- <section id="price-container" class="price container">
+            <h2 class="subtitle">Obten las ultimas consolas a un buen precio</h2>
+
+            <div class="price_table"></div>
+
+            <button class="price_finalizar"> Ir al Carrito</button>
+        </section> -->
+
+        <section class="container containerPhone">
+            <h1 class="titReparaciones">Sistema de Reparaciones de Celulares</h1>
+            <div class="phone-form">
+                <div class="numSerie">
+                    <label for="serial">Número de Serie:</label>
+                    <input type="text" placeholder="Número de Serie" id="serial">
+                </div>
+                <div class="numEmei">
+                    <label for="imei">IMEI:</label>
+                    <input type="text" placeholder="IMEI" id="imei">
+                </div>
+                <button class="btnPhone" id="checkPhoneBtn">Verificar Teléfono</button>
+            </div>
+            <div class="diagnosis-form" id="diagnosisForm" style="display: none;">
+                <label for="diagnosis">Diagnóstico:</label>
+                <input type="text" placeholder="Diagnóstico" id="diagnosis">
+                <button class="btnPhone" id="submitDiagnosisBtn">Enviar Diagnóstico</button>
+            </div>
+            <div class="authorization-form" id="authorizationForm" style="display: none;">
+                <button class="btnPhone" id="authorizeBtn">Autorizar Reparación</button>
+                <button class="btnPhone" id="makePaymentBtn">Realizar Abono</button>
+            </div>
+            <div class="tech-form" id="techForm" style="display: none;">
+                <label for="techSkills">Skills del Técnico:</label>
+                <input type="text" id="techSkills">
+                <button class="btnPhone" id="assignTechBtn">Asignar Técnico</button>
+            </div>
+            <div class="parts-form" id="partsForm" style="display: none;">
+                <label for="partName">Nombre del Repuesto:</label>
+                <input type="text" id="partName">
+                <label for="partBrand">Marca del Repuesto:</label>
+                <input type="text" id="partBrand">
+                <button class="btnPhone" id="addPartBtn">Agregar Repuesto</button>
+            </div>
+            <div class="status" id="status" style="display: none;">
+                <h2>Estado del Equipo:</h2>
+                <p id="statusText"></p>
+            </div>
+        </section>
+
+        <section class="modal">
+
+            <div class="modal_container">
+
+                <h2 class="modal_title">Bienvenido a tu Compra</h2>
+                <img src="./img/modal.svg" class="modal_img">
+
+                <div class="modal_body">
+                    <p class="parrafo">Aun no Agregaste nada!</p>
+                </div>
+                <div class="modal_cerrar">
+                    <a class="modal_close">Cerrar</a>
+                    <a class="modal_close modal_vaciar">Vaciar</a>
+                    <a id="modal_finalizar" class="modal_close">Finalizar</a>
+                    <div class="precioTotal">
+                        <span class="modal_precio">Precio Total:</span>
+                        <p id="precio_total"></p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="testimonio">
+            <div class="testimonio_container container">
+                <img src="./img/arrow_before.svg" class="testimonio_arrow" id="before">
+                <section class="testimonio_body testimonio_body--show" data-id="1">
+                    <div class="testimonio_texts">
+                        <h2 class="subtitle">Mi nombre es Jhon Alexander,</h2>
+                        <p class="testimonio_review">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae ex sunt repellat molestias impedit autem sit placeat illum laudantium, nemo
+                            quis. Hic optio veniam et magnam explicabo autem quaerat placeat!</p>
+                    </div>
+                    <figure class="testimonio_picture">
+                        <img src="./img/jhon.jpg" class="testimonio_img">
+                    </figure>
+                </section>
+
+                <section class="testimonio_body " data-id="2">
+                    <div class="testimonio_texts">
+                        <h2 class="subtitle">Mi nombre es Johana Gimenez,</h2>
+                        <p class="testimonio_review">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae ex sunt repellat molestias impedit autem sit placeat illum laudantium, nemo
+                            quis. Hic optio veniam et magnam explicabo autem quaerat placeat!</p>
+                    </div>
+                    <figure class="testimonio_picture">
+                        <img src="./img/johana.jpg" class="testimonio_img">
+                    </figure>
+                </section>
+
+                <section class="testimonio_body" data-id="3">
+                    <div class="testimonio_texts">
+                        <h2 class="subtitle">Mi nombre es Marcela Alcantara,</h2>
+                        <p class="testimonio_review">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Repudiandae ex sunt repellat molestias impedit autem sit placeat illum laudantium, nemo
+                            quis. Hic optio veniam et magnam explicabo autem quaerat placeat!</p>
+                    </div>
+                    <figure class="testimonio_picture">
+                        <img src="./img/marcela.jpg" class="testimonio_img">
+                    </figure>
+                </section>
+
+                <img src="./img/arrow_next.svg" class="testimonio_arrow" id="next">
+            </div>
+        </section>
+
+        <section id="preguntas-container" class="preguntas container">
+            <h2 class="subtitle">Preguntas frecuentes</h2>
+            <p class="preguntas_paragraph">Lorem, ipsum dolor
+                sit amet consectetur adipisicing elit. Labore repellendus aut et quaerat optio dicta rem culpa quisquam
+                temporibus. </p>
+
+            <section class="preguntas_container">
+                <article class="preguntas_padding">
+                    <div class="preguntas_answer">
+                        <h3 class="preguntas_title">Hacen recojo a domicilio?
+                            <span class="preguntas_arrow">
+                                <img src="./img/arrow_up.svg" class="preguntas_img">
+                            </span>
+                        </h3>
+
+                        <p class="preguntas_show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                            officiis excepturi cumque totam, ratione placeat optio non debitis, mollitia, animi
+                            accusantium quam soluta veritatis consequuntur neque est distinctio. Repellendus, officia?
+                            Minus tempore hic, magnam veritatis itaque repudiandae consequuntur atque error ipsam sequi
+                            ipsa rerum odit, architecto nesciunt beatae repellendus dolores nobis maiores consectetur
+                            ex. Modi nisi consequatur aspernatur quisquam atque?</p>
+                    </div>
+                </article>
+
+                <article class="preguntas_padding">
+                    <div class="preguntas_answer">
+                        <h3 class="preguntas_title">La garantia cubre caidas?
+                            <span class="preguntas_arrow">
+                                <img src="./img/arrow_up.svg" class="preguntas_img">
+                            </span>
+                        </h3>
+
+                        <p class="preguntas_show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                            officiis excepturi cumque totam, ratione placeat optio non debitis, mollitia, animi
+                            accusantium quam soluta veritatis consequuntur neque est distinctio. Repellendus, officia?
+                            Minus tempore hic, magnam veritatis itaque repudiandae consequuntur atque error ipsam sequi
+                            ipsa rerum odit, architecto nesciunt beatae repellendus dolores nobis maiores consectetur
+                            ex. Modi nisi consequatur aspernatur quisquam atque?</p>
+                    </div>
+                </article>
+
+                <article class="preguntas_padding">
+                    <div class="preguntas_answer">
+                        <h3 class="preguntas_title">Realizan mantenimiento de los celulares?
+                            <span class="preguntas_arrow">
+                                <img src="./img/arrow_up.svg" class="preguntas_img">
+                            </span>
+                        </h3>
+
+                        <p class="preguntas_show">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+                            officiis excepturi cumque totam, ratione placeat optio non debitis, mollitia, animi
+                            accusantium quam soluta veritatis consequuntur neque est distinctio. Repellendus, officia?
+                            Minus tempore hic, magnam veritatis itaque repudiandae consequuntur atque error ipsam sequi
+                            ipsa rerum odit, architecto nesciunt beatae repellendus dolores nobis maiores consectetur
+                            ex. Modi nisi consequatur aspernatur quisquam atque?</p>
+                    </div>
+                </article>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer id="redes-container" class="footer">
+        <section class="footer_container container">
+
+            <nav class="nav nav--footer">
+                <h2 class="footer_title">Pedro Salazar</h2>
+
+                <ul class="nav_link nav_link--footer">
+
+                    <li class="nav_items">
+                        <a href="#inicio-container" class="nav_links">Inicio</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#price-container" class="nav_links">Productos</a>
+                    </li>
+                    <li class="nav_items">
+                        <a href="#preguntas-container" class="nav_links">Preguntas Frecuentes</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <form class="footer_form">
+                <h2 class="footer_newsletter">Suscribete a la Newsletter</h2>
+                <div class="footer_inputs">
+                    <input type="email" placeholder="Email:" class="footer_input">
+                    <input type="submit" value="Registrate" class="footer_submit">
+                </div>
+            </form>
+
+        </section>
+
+        <section class="footer_copy container">
+            <div class="footer_social">
+                <a href="#" class="footer_icons"><img src="./img/facebook.svg" class="footer_img"></a>
+                <a href="#" class="footer_icons"><img src="./img/instagram.svg" class="footer_img"></a>
+                <a href="#" class="footer_icons"><img src="./img/youtube.svg" class="footer_img"></a>
+            </div>
+
+            <h4 class="footer_copyright">Todos los derechos reservados &copy; Pedro Salazar</h4>
+
+        </section>
+
+    </footer>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/preguntas.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/reparacion.js"></script>
+
+</body>
+
+</html>
