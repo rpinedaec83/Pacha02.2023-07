@@ -22,4 +22,3 @@ insert into produccion(descripcion,personal_id,fechaInicio,usuarioCreacion)
 values
 ('REALIZAR SILLAS',1,'2023-09-10',1),
 ('EMPACAR CARNES',2,'2023-09-20',1);
-
