@@ -156,3 +156,5 @@ alter table Empleado add FOREIGN KEY (nacionalidad)
 references Nacionalidad(id);
 alter table Empleado add FOREIGN KEY (usuario)
 references Usuario(id);
+
+-- Fin
