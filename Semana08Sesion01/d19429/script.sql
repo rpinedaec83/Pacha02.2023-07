@@ -79,15 +79,16 @@ create table Usuario(
 insert into Usuario(username, password,email,usuarioCreacion)
 values('klam','qwerty123456', 'klam@x-codec.net', 1);
 
+alter table Usuario add FOREIGN KEY (usuarioCreacion)
+references Usuario(id);
+alter table Usuario add FOREIGN KEY (usuarioModificacion)
+references Usuario(id);
+
 alter table Modelo add FOREIGN KEY (usuarioCreacion)
 references Usuario(id);
 alter table Modelo add FOREIGN KEY (usuarioModificacion)
 references Usuario(id);
 
-alter table Usuario add FOREIGN KEY (usuarioCreacion)
-references Usuario(id);
-alter table Usuario add FOREIGN KEY (usuarioModificacion)
-references Usuario(id);
 
 insert into Modelo(descripcion, url, custom,escala, usuarioCreacion)
 values ('Zeong', 'https://gundam.fandom.com/wiki/MSN-02_Zeong',1,'RG', 2);
