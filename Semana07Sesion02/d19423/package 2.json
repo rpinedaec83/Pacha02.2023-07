@@ -1,0 +1,19 @@
+{
+  "name": "clase_apis",
+  "version": "1.0.0",
+  "description": "Uso de apis mediante nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "apis",
+    "clase"
+  ],
+  "author": "Roberto Pineda",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "form-data": "^4.0.0"
+  }
+}
