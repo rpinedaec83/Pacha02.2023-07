@@ -36,6 +36,46 @@ group by Country
 order by pedidos desc limit 3;
 
 -- Informe de empleados con el numero de pedidos que registraron
+SELECT CONCAT_WS(" ", FirstName, LastName) as NombreCompleto, count(OrderID) as pedidos 
+from Employees E
+inner join Orders O
+on E.EmployeeID = O.EmployeeID
+group by FirstName;
 
+-- Informe de empleados con el numero de pedidos con nommbre que comience con M
+SELECT CONCAT_WS(" ", FirstName, LastName) as NombreCompleto, count(OrderID) as pedidos 
+from Employees E
+inner join Orders O
+on E.EmployeeID = O.EmployeeID
+group by FirstName
+having FirstName like 'm%';
+
+-- Numero de pedido, empleado y cliente
+SELECT OrderID as NumeroPedido, e.FirstName as Empleado, c.CustomerName 
+from Orders o
+inner join Employees e
+on o.EmployeeID = e.EmployeeID
+inner join Customers c
+on o.CustomerID = c.CustomerID;
+
+-- Algun cliente que haya hecho mas de un pedido por el mismo empleado
+SELECT count(OrderID) as NumeroPedido, e.FirstName as Empleado, c.CustomerName as Cliente 
+from Orders o
+inner join Employees e
+on o.EmployeeID = e.EmployeeID
+inner join Customers c
+on o.CustomerID = c.CustomerID
+group by Empleado, Cliente
+having NumeroPedido > 1;
+
+-- Cliente que con mas de un pedido y atendido por Margaret
+SELECT count(OrderID) as NumeroPedido, c.CustomerName as 'Cliente Atendido por Margaret'
+from Orders o
+inner join Employees e
+on o.EmployeeID = e.EmployeeID
+inner join Customers c
+on o.CustomerID = c.CustomerID
+group by e.FirstName, c.CustomerName
+having e.FirstName like '%margaret%' and NumeroPedido>1;
 
 
