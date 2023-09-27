@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://Cluster71218:bl9ye0x8cVJn@cluster71218.dqums5v.mongodb.net/?authMechanism=DEFAULT";
+const uri = "";
 const client = new MongoClient(uri);
 
 async function run() {
