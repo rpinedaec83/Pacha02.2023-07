@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "pachaqtec2023",
+    "database": "junkiesapi",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "pachaqtec2023",
+    "database": "junkiesapi",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "pachaqtec2023",
+    "database": "junkiesapi",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
