@@ -1,0 +1,50 @@
+<!-- HTML Formulario para Crear o Actualizar Materia Prima -->
+<form id="materiaPrimaForm">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" name="cantidad" required><br>
+
+    <label for="precio">Precio Unitario:</label>
+    <input type="number" id="precio" name="precio" required><br>
+
+    <button type="button" onclick="guardarMateriaPrima()">Guardar</button>
+</form>
+
+<!-- Lista de Materias Primas -->
+<ul id="listaMateriasPrimas"></ul>
+
+<script>
+// Función para enviar datos al servidor y guardar Materia Prima
+function guardarMateriaPrima() {
+    const nombre = document.getElementById('nombre').value;
+    const cantidad = document.getElementById('cantidad').value;
+    const precio = document.getElementById('precio').value;
+
+    // Enviar datos al servidor (usando AJAX o fetch) y procesar la respuesta del servidor
+    // ...
+    // Luego, actualizar la lista de materias primas (puede ser una función aparte)
+    actualizarListaMateriasPrimas();
+}
+
+// Función para obtener y mostrar la lista de Materias Primas
+function actualizarListaMateriasPrimas() {
+    // Obtener datos del servidor (usando AJAX o fetch) y procesar la respuesta del servidor
+    // ...
+    // Mostrar los datos en la lista de materias primas (puede ser una función aparte)
+    const listaMateriasPrimas = document.getElementById('listaMateriasPrimas');
+    // Limpiar la lista antes de agregar nuevos elementos
+    listaMateriasPrimas.innerHTML = '';
+
+    // Aquí agregar dinámicamente elementos <li> con los datos obtenidos del servidor
+    // Ejemplo:
+    /*
+    materiasPrimas.forEach(materiaPrima => {
+        const li = document.createElement('li');
+        li.textContent = `Nombre: ${materiaPrima.nombre}, Cantidad: ${materiaPrima.cantidad}, Precio: ${materiaPrima.precio}`;
+        listaMateriasPrimas.appendChild(li);
+    });
+    */
+}
+</script>
