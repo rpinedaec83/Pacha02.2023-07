@@ -1,6 +1,6 @@
 module.exports = app => {
     const tutorials = require("../controllers/tutorial.controller.js");
-
+    const tags = require("../controllers/tag.controller.js");
     var router = require("express").Router();
 
     // Create a new Tutorial
@@ -21,8 +21,12 @@ module.exports = app => {
 
     // Trae todos los tutoriales publicados
 
-    router.get("/published/", tutorials.findAllPublished);
+    router.get("/published/:id", tutorials.findAllPublished);
 
+    router.post("/comment/:id", tutorials.createComment)
+    router.post("/tag", tags.create)
+    router.get("/tag", tags.findAll)
+    router.post("/tag/tutorial", tags.addTutorial)
 
     app.use('/api/tutorials', router);
 };

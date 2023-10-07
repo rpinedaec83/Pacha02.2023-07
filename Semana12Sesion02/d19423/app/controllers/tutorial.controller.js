@@ -1,5 +1,6 @@
 const db = require("../models");
 const Tutorial = db.tutorials;
+const Comment = db.comments;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Tutorial
@@ -35,7 +36,9 @@ exports.findAll = (req, res) => {
     const title = req.query.title;
     var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
   
-    Tutorial.findAll({ where: condition })
+    Tutorial.findAll({
+        include: ["comments","tags"],
+      },{ where: condition })
       .then(data => {
         res.send(data);
       })
@@ -142,6 +145,30 @@ exports.findAllPublished = (req, res) => {
         res.status(500).send({
           message:
             err.message || "Some error occurred while retrieving tutorials."
+        });
+      });
+  };
+
+
+// Create and Save new Comments
+exports.createComment = (req, res)=>{
+    const tutorialId = req.params.id;
+    const comment = {
+        name: req.body.name,
+        text: req.body.text
+      };
+    Comment.create({
+      name: comment.name,
+      text: comment.text,
+      tutorialId: tutorialId,
+    })
+    .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while creating the Tutorial."
         });
       });
   };
