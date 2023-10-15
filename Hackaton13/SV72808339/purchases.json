@@ -1,0 +1,20 @@
+{
+  "products": [
+  {
+    "id": 1,
+    "name": "Básico de composición fotográfica",
+    "description": "Conocerás los conceptos para componer una imagen. Aprenderás como dirigir la atención y transmitir el mensaje que deseas",
+    "img": "img.png",
+    "banner": "banner.png",
+    "price": 19.9
+  },
+  {
+    "id": 2,
+    "name": "Desarrolla tu creatividad en el mundo de la publicidad",
+    "description": "LA CAMPAÑA: En este curso de creatividad aprenderás los secretos de la comunicación publicitaria.",
+    "img": "img.png",
+    "banner": "banner.png",
+    "price": 14.9
+  }
+]
+}
