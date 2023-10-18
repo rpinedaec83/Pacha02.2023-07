@@ -1,4 +1,4 @@
-const db = require("../db/db");
+const db = require("../db/db"); // conexión a la bd
 const Cupon = db.cupones;
 const Op = db.Sequelize.Op;
 
