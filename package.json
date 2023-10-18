@@ -5,6 +5,7 @@
     "express": "^4.18.2",
     "mongoose": "^7.5.3",
     "mssql": "^10.0.0",
+    "node-fetch": "^2.7.0",
     "node.js": "^0.0.1-security"
   },
   "name": "pacha02.2023-07",
