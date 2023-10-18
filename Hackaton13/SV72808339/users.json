@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Mahesh",
+    "password": "password1",
+    "email": "mahesher@outlook.com"
+  },
+  {
+    "name": "Roland",
+    "password": "drondel23",
+    "email": "greenrol@gmail.com"
+  },
+  {
+    "name": "Valentine",
+    "password": "15guiderly",
+    "email": "ceo@vanleday.com"
+  },
+  {
+    "name": "John",
+    "password": "abcd1234",
+    "email": "johnadays@idat.edu.pe"
+  },
+  {
+    "name": "Jeremy",
+    "password": "contra2010",
+    "email": "jermns@gmail.com"
+  },
+  {
+    "name": "Jorge",
+    "password": "232902",
+    "email": "jorgeoliva@gmail.com"
+  },
+  {
+    "name": "Fabricio",
+    "password": "hasheamela",
+    "email": "fabrici0@gmail.com"
+  },
+  {
+    "name": "Maria",
+    "password": "kuncra4020",
+    "email": "mar_mary@gmail.com"
+  }
+]
