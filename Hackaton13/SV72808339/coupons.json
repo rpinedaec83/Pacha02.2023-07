@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "code": "3225LJUX",
+    "name": "CUPÓN VUELTA A CLASES",
+    "discount": 20,
+    "description": "¡De vuelta a clases con ganas! Nunca es suficiente, siempre puedes aprender cosas nuevas y ahora más barato con este cupón del 20% de descuento"
+  },
+  {
+    "id": 2,
+    "code": "L54T4M2I",
+    "name": "CUPÓN DE INVIERNO",
+    "discount": 15,
+    "description": "¿En casa por los días fríos? ¡Estudia tu pasión desde casa con este cupón de 15% de descuento en todos nuestros cursos!"
+  },
+  {
+    "id": 3,
+    "code": "9U7KQEHZ",
+    "name": "CUPÓN VIP",
+    "discount": 40,
+    "description": "Cupón de regalo para miembros, creadores, administradores o cualquier persona importante que se desee."
+  }
+]

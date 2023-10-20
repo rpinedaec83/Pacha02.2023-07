@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Curso Maestro de Python: De Cero a Programador Todoterreno",
+        "description": "Aprenderás Python y sus mejores módulos: Tkinter, SQLite, Numpy, Pandas, Matplotlib, Pipenv, Django, FastAPI, Bs4 y más!",
+        "img": "imagen.jpg",
+        "banner": "banner.jpg",
+        "price": 44.9
+    },
+    {
+        "id": 2,
+        "name": "Desarrolla tu creatividad en el mundo de la publicidad",
+        "description": "LA CAMPAÑA: En este curso de creatividad aprenderás los secretos de la comunicación publicitaria.",
+        "img": "img.png",
+        "banner": "banner.png",
+        "price": 14.9
+    },
+    {
+        "id": 3,
+        "name": "Básico de composición fotográfica",
+        "description": "Conocerás los conceptos para componer una imagen. Aprenderás como dirigir la atención y transmitir el mensaje que deseas",
+        "img": "img.png",
+        "banner": "banner.png",
+        "price": 19.9
+    },
+    {
+        "id": 4,
+        "name": "Introducción a la programación orientada a objetos con PHP",
+        "description": "La programación orientada a objetos te permitirá hacer proyectos con PHP de gran envergadura.",
+        "img": "img.png",
+        "banner": "banner.png",
+        "price": 35.9
+    }
+]
