@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #title_ {
+            width: fit-content;
+            margin: 30px auto;
+        }
+
+        #mainContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title_">Cursos seleccionados</h1>
+    <div id="mainContainer"></div>
+    <script>
+        const h1_ = document.getElementById("title_")
+        const main = document.getElementById("mainContainer")
+        console.log(`http://localhost:3000/api/v1/user/courses/${localStorage.getItem("usrId")}`)
+        async function getCourses(){
+            const response = await fetch(`http://localhost:3000/api/v1/user/courses/${localStorage.getItem("usrId")}`);
+            const res_ = await response.json();
+            const cousesArr = res_.body[0].Courses
+
+            // console.log(cousesArr[0].User_Courses.isPaid)
+
+            cousesArr.map((val, index)=>{
+                const div_ = document.createElement("div")
+                const h3_ = document.createElement("h3")
+                const h2_ = document.createElement("h2")
+                const btn_ = document.createElement("button")
+                div_.style.width = "300px"
+                div_.style.height = "150px"
+                div_.style.border = "1px solid black"
+                div_.style.textAlign = "center"
+                div_.style.borderRadius = "4px"
+                h3_.textContent = val.description
+                h2_.textContent = `Estado: ${ !!(Number(val.User_Courses.isPaid)) ? "Pagado" : "Falta Pagar"}`
+                btn_.textContent = "Pagar"
+                div_.appendChild(h3_)
+                div_.insertAdjacentElement("beforeend", h2_)
+                div_.appendChild( btn_)
+                main.appendChild(div_)
+            })
+        }
+
+        getCourses()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body h2 {
+            width: fit-content;
+            margin: 20px auto;
+        }
+
+        #course_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        }
+
+        body a {
+            display: block;
+            width: 100px;
+            height: 20px;
+            margin: 20px auto;
+            border: 1px solid black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+     
+
+    </style>
+</head>
+<body>
+    <h2 id="mainTitle">Cursos disponibles</h2>
+    <div id="course_container"></div>
+    <a href="gateway">Ir a pagar</a>    
+    
+    <script>
+        const container = document.getElementById("course_container")
+        const title = document.getElementById("mainTitle")
+        const urlParams = new URLSearchParams(window.location.search);
+        title.textContent = `Cursos disponibles para ${JSON.parse(urlParams.get('id')).usr}`
+        localStorage.setItem("usrId", JSON.stringify(JSON.parse(urlParams.get('id')).id))
+
+        const saveCourse = async (idUser, idCourse) => {
+            const response = await fetch("http://localhost:3000/api/v1/user/addcourse", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify({
+                    "idUser" : idUser,
+                    "idCourse": idCourse
+                })
+
+        });
+            const data = await response.json()
+            console.log(data)
+        }
+        
+        
+        async function displayCourses() {
+        const response = await fetch("http://localhost:3000/api/v1/courses");
+        const courses = await response.json();
+        courses.body.map((val, index)=>{
+            let div_ = document.createElement("div")
+            let img_ = document.createElement("img")
+            let btn_ = document.createElement("button")
+            let price_ = document.createElement("h3")
+            let p_ = document.createElement("p")
+            btn_.textContent = "¡Lo Quiero!"
+            btn_.addEventListener("click", () => {
+                btn_.style.backgroundColor = "#a2c11c"
+                saveCourse(JSON.parse(urlParams.get('id')).id, val.id)
+            })
+            p_.textContent = val.description
+            price_.textContent = `Precio: S/.${val.price} x mes`
+            btn_.style.display = "block"
+            btn_.style.width = "100%"
+            img_.style.width = "360px"
+            img_.setAttribute("src", `http://localhost:3000/api/v1/file/${val.name}.png`)
+            div_.appendChild(img_)
+            div_.appendChild(p_)
+            div_.appendChild(price_)
+            div_.insertAdjacentElement("beforeend", btn_)
+            container.appendChild(div_)
+        })
+        };
+
+        displayCourses()
+
+    </script>
+</body>
+</html>
