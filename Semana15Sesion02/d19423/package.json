@@ -13,12 +13,16 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "bootstrap": "^3.3.7",
+    "cookie-session": "^2.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "jquery": "^3.4.1",
     "mysql": "^2.17.1",
+    "nodemon": "*",
+    "passport": "^0.5.3",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-google-oauth20": "^2.0.0",
     "path": "^0.12.7",
-    "socket.io": "*",
-    "nodemon":"*"
+    "socket.io": "*"
   }
 }

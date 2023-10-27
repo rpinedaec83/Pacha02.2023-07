@@ -11,7 +11,7 @@ con.connect(function (err) {
     con.query(sql, function (err, result) {
         if (err) throw err;
     });
-    var sql = "CREATE TABLE IF NOT EXISTS  login (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(250) , password VARCHAR(250))";
+    var sql = "CREATE TABLE IF NOT EXISTS  login (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(250) unique , password VARCHAR(250))";
     con.query(sql, function (err, result) {
         if (err) throw err;
     });

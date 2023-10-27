@@ -39,4 +39,7 @@ $(function(){
         //console.log(textfield.val());
 
     });
+    $('#google').click(function(e) {
+        window.location.replace("/google");
+    });
 });
