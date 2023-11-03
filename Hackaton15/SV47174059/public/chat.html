@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat de Courier de Maquillaje</title>
+  <!-- Agrega los enlaces a los archivos de Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .chat-container {
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    .message-input {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">Chat de Courier</div>
+          <div class="card-body chat-container" id="chat-container">
+            <!-- Aquí se mostrarán los mensajes del chat -->
+          </div>
+          <div class="card-footer message-input">
+            <input type="text" class="form-control" id="message-input" placeholder="Escribe un mensaje...">
+            <button class="btn btn-primary mt-2" onclick="sendMessage()">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agrega los enlaces a los archivos de Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Agrega tu archivo JavaScript para el chat -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>
